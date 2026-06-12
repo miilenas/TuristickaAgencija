@@ -126,7 +126,7 @@ namespace Client.GUIControlor
                 putnikUC.DgvSviPutnici.DataSource = null;
                 DGV(rezultat);
 
-                MessageBox.Show("Sistem je nasao putnike po zadatim kriterijumima.");
+              //  MessageBox.Show("Sistem je nasao putnike po zadatim kriterijumima.");
             }
             else
             {

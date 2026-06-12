@@ -57,6 +57,17 @@ namespace Client.GUIControlor
                 return;
             }
 
+            DateTime datumOd = uc.DatumPolaska.Value.Date;
+            DateTime datumDo = uc.DatumDolaska.Value.Date;
+
+            int brojNocenja = (datumDo - datumOd).Days;
+
+            if (brojNocenja <= 0)
+                throw new Exception("Datum dolaska mora biti posle datuma polaska.");
+
+            if (brojNocenja != uc.Kolicina)
+                throw new Exception("Kolicina mora odgovarati broju nocenja.");
+
             Smestaj smestaj = (Smestaj)uc.CmbSmestaj.SelectedItem;
 
             StavkaRezervacije stavka = new StavkaRezervacije
@@ -75,11 +86,12 @@ namespace Client.GUIControlor
             Rezervacija.stavkaRezervacijeList.Add(stavka);
             Rezervacija.UkupanIznos = Rezervacija.stavkaRezervacijeList.Sum(s => s.UkupnaCena);
 
+            //update jer dodajes stavku na vec postojecu rezervaciju
             Response response = Communication.Instance.UpdateRezervacija(Rezervacija);
 
             if (response.IsSuccess)
             {
-                MessageBox.Show("Sistem je dodao stavku rezervacije.");
+                //MessageBox.Show("Sistem je dodao stavku rezervacije.");
 
                 FrmMain main = (FrmMain)uc.FindForm();
                 main.ChangePanel(new RezervacijaUC(Rezervacija));

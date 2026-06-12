@@ -167,6 +167,8 @@ namespace Client.GUIControlor
             }
             else
             {
+                rezervacijaUC.DgvRezervacije.DataSource = null;
+                rezervacijaUC.DgvRezervacije.Rows.Clear();
                 MessageBox.Show("Sistem ne moze da nadje rezervacije po zadatim kriterijumima.");
             }
         }
@@ -282,6 +284,12 @@ namespace Client.GUIControlor
 
             rezervacijaUC.DgvStavkeRezervacije.DataSource = null;
             rezervacijaUC.DgvStavkeRezervacije.DataSource = stavke;
+            rezervacijaUC.DgvStavkeRezervacije.Columns["IdSmestaj"].HeaderText = "Smestaj";
+            rezervacijaUC.DgvStavkeRezervacije.Columns["JedinicnaCena"].HeaderText = "Jedinicna cena";
+            rezervacijaUC.DgvStavkeRezervacije.Columns["UkupnaCena"].HeaderText = "Ukupna cena";
+            rezervacijaUC.DgvStavkeRezervacije.Columns["DatumPolaska"].HeaderText = "Datum polaska";
+            rezervacijaUC.DgvStavkeRezervacije.Columns["DatumDolaska"].HeaderText = "Datum dolaska";
+            rezervacijaUC.DgvStavkeRezervacije.Columns["OpisStavke"].HeaderText = "Opis stavke";
 
             SakrijKolonuStavke("Rb");
             SakrijKolonuStavke("IdRezervacija");
@@ -299,19 +307,6 @@ namespace Client.GUIControlor
         public Rezervacija KreirajRezervacija()
         {
             return new Rezervacija();
-
-            //Response response = Communication.Instance.CreateRezervacija(new Rezervacija());
-
-            //if (response.IsSuccess)
-            //{
-            //    MessageBox.Show("Sistem je kreirao rezervaciju.");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Sistem ne moze da kreira rezervaciju.");
-            //}
-
-            //return (Rezervacija)response.Result;
         }
 
         public void ObrisiStavku(StavkaRezervacije stavka)
@@ -353,6 +348,9 @@ namespace Client.GUIControlor
             }
 
             rezervacijaUC.DgvRezervacije.DataSource = rezervacije;
+
+            rezervacijaUC.DgvRezervacije.Columns["UkupanIznos"].HeaderText = "Ukupan iznos";
+
 
             if (rezervacije == null)
             {

@@ -65,6 +65,6 @@ C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\Client\obj\Debug\net8
 C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\Client\obj\Debug\net8.0-windows\Client.UserControl.LicencaUC.resources
 C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\Client\obj\Debug\net8.0-windows\Client.UserControl.PutnikUC.resources
 C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\Client\obj\Debug\net8.0-windows\Client.UserControl.RezervacijaUC.resources
-C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\Client\obj\Debug\net8.0-windows\Client.UserControl.StavkaRezervacijeUC.resources
 C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\Client\obj\Debug\net8.0-windows\Client.UserControl.DodajStavkuRezervacijeUC.resources
 C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\Client\obj\Debug\net8.0-windows\Client.UserControl.IzmeniStavkuRezervacijeUC.resources
+C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\Client\obj\Debug\net8.0-windows\Client.sourcelink.json

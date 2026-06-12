@@ -67,6 +67,16 @@ namespace Client.GUIControlor
                 MessageBox.Show("Sistem ne moze da izmeni stavku rezervacije.");
                 return;
             }
+            DateTime datumOd = uc.DatumPolaska.Value.Date;
+            DateTime datumDo = uc.DatumDolaska.Value.Date;
+
+            int brojNocenja = (datumDo - datumOd).Days;
+
+            if (brojNocenja <= 0)
+                throw new Exception("Datum dolaska mora biti posle datuma polaska.");
+
+            if (brojNocenja != uc.Kolicina)
+                throw new Exception("Kolicina mora odgovarati broju nocenja.");
 
             Smestaj smestaj = (Smestaj)uc.CmbSmestaj.SelectedItem;
 

@@ -45,7 +45,13 @@ namespace Client.UserControl
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            controlor.IzmeniStavku();
+            try {
+                controlor.IzmeniStavku();
+            }
+            catch (Exception ex){
+                MessageBox.Show("Greska: "+ex.Message);
+            }
+         
         }
 
         private void btnNazad_Click(object sender, EventArgs e)

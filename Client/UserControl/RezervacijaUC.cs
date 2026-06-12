@@ -20,6 +20,12 @@ namespace Client.UserControl
             InitializeComponent();
             dgvRezervacije.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvRezervacije.MultiSelect = false;
+            cmbAgent.Enabled = false;
+            cmbPutnik.Enabled = false;
+            //unable korisnika da selektuje pojedinacnu celiju ili vise opcija
+            dgvStavkaRez.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvStavkaRez.MultiSelect = false;
+
             controlor = new RezervacijaControlor(this, rezervacija ?? new Rezervacija());
         }
         public ComboBox CmbPutnikIzmeni => cmbPutnik;
@@ -53,7 +59,7 @@ namespace Client.UserControl
                 return;
             }
             FrmMain main = (FrmMain)this.FindForm();
-            StavkaRezervacijeUC uc = new StavkaRezervacijeUC(controlor.rezervacijaDTO);
+            DodajStavkuRezervacijeUC uc = new DodajStavkuRezervacijeUC(controlor.rezervacijaDTO);
             main.ChangePanel(uc);
         }
 
@@ -86,6 +92,36 @@ namespace Client.UserControl
         private void btnPretrazi_Click(object sender, EventArgs e)
         {
             controlor.SearchRezervacija();
+        }
+
+        private void btnObrisiStavku_Click(object sender, EventArgs e)
+        {
+            //ako nije izabrana stavka iz dgvStavkaRez, ispsie se poruka da mora da se izabere stavka
+            if (dgvStavkaRez.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Morate izabrati stavku za brisanje!", "Greška");
+                return;
+            }
+
+            StavkaRezervacije stavka = (StavkaRezervacije)dgvStavkaRez.SelectedRows[0].DataBoundItem;
+            controlor.ObrisiStavku(stavka);
+
+        }
+
+        private void btnIzmeniStavku_Click(object sender, EventArgs e)
+        {
+            if (dgvStavkaRez.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Morate izabrati stavku za izmenu!", "Greška");
+                return;
+            }
+
+            FrmMain main = (FrmMain)this.FindForm();
+            Rezervacija rez =(Rezervacija) dgvRezervacije.SelectedRows[0].DataBoundItem;
+            StavkaRezervacije stavka= (StavkaRezervacije)dgvStavkaRez.SelectedRows[0].DataBoundItem;
+            IzmeniStavkuRezervacijeUC uc = new IzmeniStavkuRezervacijeUC(rez,stavka);
+            main.ChangePanel(uc);
+
         }
     }
 }

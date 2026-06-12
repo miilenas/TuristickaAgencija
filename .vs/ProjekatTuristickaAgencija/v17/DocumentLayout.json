@@ -7,32 +7,36 @@
       "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\guicontrolor\\rezervacijacontrolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|c:\\users\\milen\\onedrive\\desktop\\projekatturistickaagencija\\client\\usercontrol\\rezervacijauc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\usercontrol\\rezervacijauc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|c:\\users\\milen\\onedrive\\desktop\\projekatturistickaagencija\\client\\usercontrol\\izmenistavkurezervacijeuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\usercontrol\\izmenistavkurezervacijeuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|c:\\users\\milen\\onedrive\\desktop\\projekatturistickaagencija\\client\\usercontrol\\izmenistavkurezervacijeuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\usercontrol\\izmenistavkurezervacijeuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|c:\\users\\milen\\onedrive\\desktop\\projekatturistickaagencija\\client\\guicontrolor\\izmenistavkurezervacijecontrolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\guicontrolor\\izmenistavkurezervacijecontrolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|c:\\users\\milen\\onedrive\\desktop\\projekatturistickaagencija\\client\\usercontrol\\rezervacijauc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\usercontrol\\rezervacijauc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|c:\\users\\milen\\onedrive\\desktop\\projekatturistickaagencija\\client\\usercontrol\\rezervacijauc.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\usercontrol\\rezervacijauc.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|c:\\users\\milen\\onedrive\\desktop\\projekatturistickaagencija\\client\\guicontrolor\\dodajstavkurezervacijecontrolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\guicontrolor\\dodajstavkurezervacijecontrolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\client\\usercontrol\\izmenistavkurezervacijeuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\usercontrol\\izmenistavkurezervacijeuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\client\\usercontrol\\dodajstavkurezervacijeuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\usercontrol\\dodajstavkurezervacijeuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\client\\usercontrol\\stavkarezervacijeuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\usercontrol\\stavkarezervacijeuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|c:\\users\\milen\\onedrive\\desktop\\projekatturistickaagencija\\client\\usercontrol\\kreirajrezervacijauc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\usercontrol\\kreirajrezervacijauc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6CA915BB-9395-4578-89C6-A07C87F07E32}|Domain\\Common.csproj|c:\\users\\milen\\onedrive\\desktop\\projekatturistickaagencija\\domain\\domain\\stavkarezervacije.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6CA915BB-9395-4578-89C6-A07C87F07E32}|Domain\\Common.csproj|solutionrelative:domain\\domain\\stavkarezervacije.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|c:\\users\\milen\\onedrive\\desktop\\projekatturistickaagencija\\client\\usercontrol\\rezervacijauc.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D720BB8F-2819-4D2D-B31B-77110B27DB29}|Client\\Client.csproj|solutionrelative:client\\usercontrol\\rezervacijauc.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,37 +50,40 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "RezervacijaUC.cs",
+              "DocumentMoniker": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\RezervacijaUC.cs",
+              "RelativeDocumentMoniker": "Client\\UserControl\\RezervacijaUC.cs",
+              "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\RezervacijaUC.cs",
+              "RelativeToolTip": "Client\\UserControl\\RezervacijaUC.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAB8AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T09:32:11.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "IzmeniStavkuRezervacijeUC.cs [Design]",
               "DocumentMoniker": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\IzmeniStavkuRezervacijeUC.cs",
               "RelativeDocumentMoniker": "Client\\UserControl\\IzmeniStavkuRezervacijeUC.cs",
               "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\IzmeniStavkuRezervacijeUC.cs [Design]",
               "RelativeToolTip": "Client\\UserControl\\IzmeniStavkuRezervacijeUC.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-12T12:16:52.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DodajStavkuRezervacijeUC.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\DodajStavkuRezervacijeUC.cs",
-              "RelativeDocumentMoniker": "Client\\UserControl\\DodajStavkuRezervacijeUC.cs",
-              "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\DodajStavkuRezervacijeUC.cs [Design]",
-              "RelativeToolTip": "Client\\UserControl\\DodajStavkuRezervacijeUC.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-12T12:16:26.982Z"
+              "WhenOpened": "2026-06-12T14:32:56.253Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RezervacijaUC.cs",
+              "Title": "RezervacijaUC.cs [Design]",
               "DocumentMoniker": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\RezervacijaUC.cs",
               "RelativeDocumentMoniker": "Client\\UserControl\\RezervacijaUC.cs",
-              "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\RezervacijaUC.cs",
-              "RelativeToolTip": "Client\\UserControl\\RezervacijaUC.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAuwC8AAAAjAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\RezervacijaUC.cs [Design]",
+              "RelativeToolTip": "Client\\UserControl\\RezervacijaUC.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-12T09:32:11.802Z"
+              "WhenOpened": "2026-06-12T13:56:22.713Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -86,45 +93,49 @@
               "RelativeDocumentMoniker": "Client\\GUIControlor\\RezervacijaControlor.cs",
               "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\GUIControlor\\RezervacijaControlor.cs",
               "RelativeToolTip": "Client\\GUIControlor\\RezervacijaControlor.cs",
-              "ViewState": "AgIAAL0AAAAAAAAAAAApwKMAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAFoBAAAAAAAAAAAcwGUBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T15:34:25.747Z",
+              "WhenOpened": "2026-06-12T13:41:14.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DodajStavkuRezervacijeControlor.cs",
-              "DocumentMoniker": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\GUIControlor\\DodajStavkuRezervacijeControlor.cs",
-              "RelativeDocumentMoniker": "Client\\GUIControlor\\DodajStavkuRezervacijeControlor.cs",
-              "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\GUIControlor\\DodajStavkuRezervacijeControlor.cs",
-              "RelativeToolTip": "Client\\GUIControlor\\DodajStavkuRezervacijeControlor.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "IzmeniStavkuRezervacijeControlor.cs",
+              "DocumentMoniker": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\GUIControlor\\IzmeniStavkuRezervacijeControlor.cs",
+              "RelativeDocumentMoniker": "Client\\GUIControlor\\IzmeniStavkuRezervacijeControlor.cs",
+              "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\GUIControlor\\IzmeniStavkuRezervacijeControlor.cs",
+              "RelativeToolTip": "Client\\GUIControlor\\IzmeniStavkuRezervacijeControlor.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAswE4AAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-12T12:17:10.032Z"
+              "WhenOpened": "2026-06-12T14:41:50.34Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RezervacijaUC.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\RezervacijaUC.Designer.cs",
-              "RelativeDocumentMoniker": "Client\\UserControl\\RezervacijaUC.Designer.cs",
-              "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\RezervacijaUC.Designer.cs",
-              "RelativeToolTip": "Client\\UserControl\\RezervacijaUC.Designer.cs",
-              "ViewState": "AgIAAC0BAAAAAAAAAAAAwDwBAAAOAAAAAAAAAA==",
+              "Title": "IzmeniStavkuRezervacijeUC.cs",
+              "DocumentMoniker": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\IzmeniStavkuRezervacijeUC.cs",
+              "RelativeDocumentMoniker": "Client\\UserControl\\IzmeniStavkuRezervacijeUC.cs",
+              "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\IzmeniStavkuRezervacijeUC.cs",
+              "RelativeToolTip": "Client\\UserControl\\IzmeniStavkuRezervacijeUC.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAADwvzEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-12T12:18:00.462Z"
+              "WhenOpened": "2026-06-12T14:44:47.287Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "StavkaRezervacijeUC.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\StavkaRezervacijeUC.cs",
-              "RelativeDocumentMoniker": "Client\\UserControl\\StavkaRezervacijeUC.cs",
-              "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\StavkaRezervacijeUC.cs [Design]",
-              "RelativeToolTip": "Client\\UserControl\\StavkaRezervacijeUC.cs [Design]",
+              "Title": "KreirajRezervacijaUC.cs",
+              "DocumentMoniker": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\KreirajRezervacijaUC.cs",
+              "RelativeDocumentMoniker": "Client\\UserControl\\KreirajRezervacijaUC.cs",
+              "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\KreirajRezervacijaUC.cs",
+              "RelativeToolTip": "Client\\UserControl\\KreirajRezervacijaUC.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAA2wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-12T09:51:05.382Z"
+              "WhenOpened": "2026-06-12T14:27:42.999Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -134,9 +145,23 @@
               "RelativeDocumentMoniker": "Domain\\Domain\\StavkaRezervacije.cs",
               "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Domain\\Domain\\StavkaRezervacije.cs",
               "RelativeToolTip": "Domain\\Domain\\StavkaRezervacije.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAUwCAAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T17:56:09.037Z"
+              "WhenOpened": "2026-06-11T17:56:09.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RezervacijaUC.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\RezervacijaUC.Designer.cs",
+              "RelativeDocumentMoniker": "Client\\UserControl\\RezervacijaUC.Designer.cs",
+              "ToolTip": "C:\\Users\\milen\\OneDrive\\Desktop\\ProjekatTuristickaAgencija\\Client\\UserControl\\RezervacijaUC.Designer.cs",
+              "RelativeToolTip": "Client\\UserControl\\RezervacijaUC.Designer.cs",
+              "ViewState": "AgIAAC0BAAAAAAAAAAAAwDwBAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T12:18:00.462Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -268,7 +268,7 @@
             groupBox2.Size = new Size(540, 674);
             groupBox2.TabIndex = 28;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Rezervacija- izmena podataka";
+            groupBox2.Text = "Stavke izabrane rezervacije";
             // 
             // lblUkupanIznos
             // 
@@ -301,7 +301,7 @@
             btnObrisiStavku.TabIndex = 33;
             btnObrisiStavku.Text = "Obrisi stavku";
             btnObrisiStavku.UseVisualStyleBackColor = false;
-          //  btnObrisiStavku.Click += btnObrisiStavku_Click;
+            btnObrisiStavku.Click += btnObrisiStavku_Click;
             // 
             // btnIzmeniStavku
             // 
@@ -314,7 +314,7 @@
             btnIzmeniStavku.TabIndex = 32;
             btnIzmeniStavku.Text = "Izmeni stavku";
             btnIzmeniStavku.UseVisualStyleBackColor = false;
-            //btnIzmeniStavku.Click += btnIzmeniStavku_Click;
+            btnIzmeniStavku.Click += btnIzmeniStavku_Click;
             // 
             // btnDodajStavku
             // 

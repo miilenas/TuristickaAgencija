@@ -13,3 +13,4 @@ C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\DBBroker\obj\Debug\ne
 C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\DBBroker\obj\Debug\net8.0\refint\DBBroker.dll
 C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\DBBroker\obj\Debug\net8.0\DBBroker.pdb
 C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\DBBroker\obj\Debug\net8.0\ref\DBBroker.dll
+C:\Users\milen\OneDrive\Desktop\ProjekatTuristickaAgencija\DBBroker\obj\Debug\net8.0\DBBroker.sourcelink.json
