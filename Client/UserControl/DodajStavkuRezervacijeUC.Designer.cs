@@ -41,9 +41,10 @@ namespace Client.UserControl
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Desktop;
             label1.Location = new Point(498, 43);
             label1.Name = "label1";
-            label1.Size = new Size(379, 48);
+            label1.Size = new Size(429, 48);
             label1.TabIndex = 0;
             label1.Text = "Dodaj stavku rezervacije";
             // 
@@ -75,7 +76,7 @@ namespace Client.UserControl
             // 
             // btnNazad
             // 
-            btnNazad.BackColor = SystemColors.ControlLight;
+            btnNazad.BackColor = Color.LavenderBlush;
             btnNazad.Location = new Point(311, 463);
             btnNazad.Name = "btnNazad";
             btnNazad.Size = new Size(176, 43);
@@ -86,7 +87,7 @@ namespace Client.UserControl
             // 
             // btnSacuvaj
             // 
-            btnSacuvaj.BackColor = SystemColors.ControlLight;
+            btnSacuvaj.BackColor = Color.LavenderBlush;
             btnSacuvaj.Location = new Point(94, 463);
             btnSacuvaj.Name = "btnSacuvaj";
             btnSacuvaj.Size = new Size(176, 43);
@@ -107,6 +108,7 @@ namespace Client.UserControl
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F);
+            label4.ForeColor = SystemColors.Desktop;
             label4.Location = new Point(63, 373);
             label4.Name = "label4";
             label4.Size = new Size(132, 25);
@@ -125,6 +127,7 @@ namespace Client.UserControl
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F);
+            label5.ForeColor = SystemColors.Desktop;
             label5.Location = new Point(63, 322);
             label5.Name = "label5";
             label5.Size = new Size(132, 25);
@@ -143,6 +146,7 @@ namespace Client.UserControl
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F);
+            label7.ForeColor = SystemColors.Desktop;
             label7.Location = new Point(63, 259);
             label7.Name = "label7";
             label7.Size = new Size(104, 25);
@@ -164,6 +168,7 @@ namespace Client.UserControl
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F);
+            label6.ForeColor = SystemColors.Desktop;
             label6.Location = new Point(63, 137);
             label6.Name = "label6";
             label6.Size = new Size(72, 25);
@@ -176,7 +181,7 @@ namespace Client.UserControl
             lblUkupnaCena.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblUkupnaCena.Location = new Point(207, 202);
             lblUkupnaCena.Name = "lblUkupnaCena";
-            lblUkupnaCena.Size = new Size(48, 25);
+            lblUkupnaCena.Size = new Size(47, 25);
             lblUkupnaCena.TabIndex = 5;
             lblUkupnaCena.Text = "0.00";
             // 
@@ -184,6 +189,7 @@ namespace Client.UserControl
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F);
+            label8.ForeColor = SystemColors.Desktop;
             label8.Location = new Point(63, 202);
             label8.Name = "label8";
             label8.Size = new Size(114, 25);
@@ -196,7 +202,7 @@ namespace Client.UserControl
             lblJedinicnaCena.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblJedinicnaCena.Location = new Point(207, 92);
             lblJedinicnaCena.Name = "lblJedinicnaCena";
-            lblJedinicnaCena.Size = new Size(48, 25);
+            lblJedinicnaCena.Size = new Size(47, 25);
             lblJedinicnaCena.TabIndex = 3;
             lblJedinicnaCena.Text = "0.00";
             // 
@@ -204,6 +210,7 @@ namespace Client.UserControl
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F);
+            label3.ForeColor = SystemColors.Desktop;
             label3.Location = new Point(63, 92);
             label3.Name = "label3";
             label3.Size = new Size(124, 25);
@@ -223,6 +230,7 @@ namespace Client.UserControl
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F);
+            label2.ForeColor = SystemColors.Desktop;
             label2.Location = new Point(63, 51);
             label2.Name = "label2";
             label2.Size = new Size(74, 25);

@@ -61,9 +61,9 @@
             // 
             // btnKreirajRezervaciju
             // 
-            btnKreirajRezervaciju.BackColor = SystemColors.ControlLight;
+            btnKreirajRezervaciju.BackColor = Color.LavenderBlush;
             btnKreirajRezervaciju.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnKreirajRezervaciju.Location = new Point(765, 538);
+            btnKreirajRezervaciju.Location = new Point(874, 529);
             btnKreirajRezervaciju.Margin = new Padding(4);
             btnKreirajRezervaciju.Name = "btnKreirajRezervaciju";
             btnKreirajRezervaciju.Size = new Size(212, 63);
@@ -84,7 +84,7 @@
             dgvRezervacije.Name = "dgvRezervacije";
             dgvRezervacije.ReadOnly = true;
             dgvRezervacije.RowHeadersWidth = 62;
-            dgvRezervacije.Size = new Size(585, 427);
+            dgvRezervacije.Size = new Size(788, 427);
             dgvRezervacije.TabIndex = 28;
             dgvRezervacije.CellClick += dgvRezervacije_CellClick;
             // 
@@ -101,7 +101,8 @@
             groupBox1.Controls.Add(cmbAgentPretrazi);
             groupBox1.Controls.Add(label4);
             groupBox1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(1196, 76);
+            groupBox1.ForeColor = SystemColors.InactiveCaptionText;
+            groupBox1.Location = new Point(1389, 76);
             groupBox1.Margin = new Padding(4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4);
@@ -114,6 +115,7 @@
             // 
             button2.BackColor = SystemColors.ControlLight;
             button2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            button2.ForeColor = SystemColors.Desktop;
             button2.Location = new Point(455, 216);
             button2.Margin = new Padding(4);
             button2.Name = "button2";
@@ -127,6 +129,7 @@
             // 
             button3.BackColor = SystemColors.ControlLight;
             button3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            button3.ForeColor = SystemColors.Desktop;
             button3.Location = new Point(455, 128);
             button3.Margin = new Padding(4);
             button3.Name = "button3";
@@ -140,6 +143,7 @@
             // 
             button1.BackColor = SystemColors.ControlLight;
             button1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            button1.ForeColor = SystemColors.Desktop;
             button1.Location = new Point(455, 44);
             button1.Margin = new Padding(4);
             button1.Name = "button1";
@@ -161,7 +165,7 @@
             // 
             // btnPretrazi
             // 
-            btnPretrazi.BackColor = SystemColors.ControlLight;
+            btnPretrazi.BackColor = Color.LavenderBlush;
             btnPretrazi.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPretrazi.Location = new Point(170, 292);
             btnPretrazi.Margin = new Padding(4);
@@ -176,6 +180,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.Desktop;
             label2.Location = new Point(9, 230);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
@@ -197,6 +202,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label3.ForeColor = SystemColors.Desktop;
             label3.Location = new Point(9, 142);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
@@ -218,6 +224,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.Desktop;
             label4.Location = new Point(9, 59);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
@@ -240,8 +247,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Desktop;
             label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(742, 17);
+            label1.Location = new Point(862, 22);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(235, 54);
@@ -292,7 +300,7 @@
             // 
             // btnObrisiStavku
             // 
-            btnObrisiStavku.BackColor = SystemColors.ControlLight;
+            btnObrisiStavku.BackColor = Color.LavenderBlush;
             btnObrisiStavku.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnObrisiStavku.ForeColor = Color.Red;
             btnObrisiStavku.Location = new Point(314, 462);
@@ -306,7 +314,7 @@
             // 
             // btnIzmeniStavku
             // 
-            btnIzmeniStavku.BackColor = SystemColors.ControlLight;
+            btnIzmeniStavku.BackColor = Color.LavenderBlush;
             btnIzmeniStavku.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnIzmeniStavku.Location = new Point(21, 471);
             btnIzmeniStavku.Margin = new Padding(4);
@@ -319,7 +327,7 @@
             // 
             // btnDodajStavku
             // 
-            btnDodajStavku.BackColor = SystemColors.ControlLight;
+            btnDodajStavku.BackColor = Color.LavenderBlush;
             btnDodajStavku.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDodajStavku.Location = new Point(147, 584);
             btnDodajStavku.Margin = new Padding(4);
@@ -344,6 +352,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label6.ForeColor = SystemColors.Desktop;
             label6.Location = new Point(10, 136);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
@@ -365,6 +374,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label7.ForeColor = SystemColors.Desktop;
             label7.Location = new Point(10, 60);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
@@ -382,7 +392,7 @@
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Name = "RezervacijaUC";
-            Size = new Size(1746, 833);
+            Size = new Size(1906, 847);
             ((System.ComponentModel.ISupportInitialize)dgvRezervacije).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

@@ -45,13 +45,15 @@ namespace Client.UserControl
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 controlor.IzmeniStavku();
             }
-            catch (Exception ex){
-                MessageBox.Show("Greska: "+ex.Message);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Greska: " + ex.Message, "Greska");
             }
-         
+
         }
 
         private void btnNazad_Click(object sender, EventArgs e)
@@ -59,5 +61,7 @@ namespace Client.UserControl
             FrmMain main = (FrmMain)this.FindForm();
             main.ChangePanel(new RezervacijaUC(controlor.Rezervacija));
         }
+
+       
     }
 }

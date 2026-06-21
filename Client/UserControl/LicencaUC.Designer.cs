@@ -54,7 +54,7 @@
             groupBox2.Controls.Add(btnSacuvaj);
             groupBox2.Controls.Add(label2);
             groupBox2.Font = new Font("Segoe UI", 9F);
-            groupBox2.Location = new Point(246, 93);
+            groupBox2.Location = new Point(514, 164);
             groupBox2.Margin = new Padding(4);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(4);
@@ -74,11 +74,12 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F);
+            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label6.ForeColor = SystemColors.Desktop;
             label6.Location = new Point(129, 393);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(116, 25);
+            label6.Size = new Size(121, 25);
             label6.TabIndex = 26;
             label6.Text = "Datum isteka";
             // 
@@ -94,11 +95,12 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F);
+            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.Desktop;
             label4.Location = new Point(129, 289);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(144, 25);
+            label4.Size = new Size(149, 25);
             label4.TabIndex = 24;
             label4.Text = "Datum izdavanja";
             // 
@@ -115,11 +117,12 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F);
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label3.ForeColor = SystemColors.Desktop;
             label3.Location = new Point(129, 193);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(60, 25);
+            label3.Size = new Size(63, 25);
             label3.TabIndex = 22;
             label3.Text = "Agent";
             // 
@@ -135,7 +138,7 @@
             // 
             // btnSacuvaj
             // 
-            btnSacuvaj.BackColor = SystemColors.ControlLight;
+            btnSacuvaj.BackColor = Color.LavenderBlush;
             btnSacuvaj.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSacuvaj.Location = new Point(352, 491);
             btnSacuvaj.Margin = new Padding(4);
@@ -149,11 +152,12 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F);
+            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.Desktop;
             label2.Location = new Point(129, 90);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(93, 25);
+            label2.Size = new Size(100, 25);
             label2.TabIndex = 16;
             label2.Text = "Tip licence";
             // 
@@ -161,8 +165,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Desktop;
             label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(539, 26);
+            label1.Location = new Point(807, 97);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(232, 48);
@@ -173,11 +178,10 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1351, 726);
             Controls.Add(groupBox2);
             Controls.Add(label1);
             Name = "LicencaUC";
-            Text = "LicencaUC";
+            Size = new Size(1486, 788);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);

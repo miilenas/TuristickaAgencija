@@ -18,6 +18,13 @@ namespace Client.UserControl
         public PutnikUC()
         {
             InitializeComponent();
+
+            //disable pre nego sto se izabere putnik iz dgv
+            groupBox1.Enabled = false;
+
+            cmbMestoPretrazi.DropDownStyle=ComboBoxStyle.DropDownList;
+
+
             controlor = new PutnikControlor(this);
         }
 
@@ -106,6 +113,7 @@ namespace Client.UserControl
             }
 
             controlor.OdabraniPutnik();
+            groupBox1.Enabled = true;
         }
 
         private void btnOcistiIme_Click(object sender, EventArgs e)

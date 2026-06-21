@@ -51,7 +51,8 @@ namespace Client.GUIControlor
         public void DodajStavku()
         {
             if (uc.CmbSmestaj.SelectedIndex == -1 ||
-                uc.DatumPolaska.Value >= uc.DatumDolaska.Value)
+                uc.DatumPolaska.Value >= uc.DatumDolaska.Value||
+               string.IsNullOrEmpty(uc.OpisStavke))
             {
                 MessageBox.Show("Sistem ne moze da sacuva stavku rezervacije.");
                 return;

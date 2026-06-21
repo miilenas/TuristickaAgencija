@@ -18,6 +18,7 @@ namespace Client.UserControl
         public KreirajPutnikUC(Putnik putnik)
         {
             InitializeComponent();
+            cmbMesto.DropDownStyle = ComboBoxStyle.DropDownList;
 
             controlor = new KreirajPutnikControler(this, putnik);
            

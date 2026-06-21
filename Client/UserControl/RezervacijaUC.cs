@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Client.UserControl
 {
@@ -22,17 +23,22 @@ namespace Client.UserControl
             dgvRezervacije.MultiSelect = false;
             cmbAgent.Enabled = false;
             cmbPutnik.Enabled = false;
+            //da ne moze da se kuca tekst u cmbbox
+            cmbAgentPretrazi.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPutnikPretrazi.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSmestajPretrazi.DropDownStyle = ComboBoxStyle.DropDownList;
+
             //unable korisnika da selektuje pojedinacnu celiju ili vise opcija
             dgvStavkaRez.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvStavkaRez.MultiSelect = false;
 
             controlor = new RezervacijaControlor(this, rezervacija ?? new Rezervacija());
         }
-        public ComboBox CmbPutnikIzmeni => cmbPutnik;
-        public ComboBox CmbAgentIzmeni => cmbAgent;
-        public ComboBox CmbPutnikPretrazi => cmbPutnikPretrazi;
-        public ComboBox CmbAgentPretrazi => cmbAgentPretrazi;
-        public ComboBox CmbSmestajPretrazi => cmbSmestajPretrazi;
+        public System.Windows.Forms.ComboBox CmbPutnikIzmeni => cmbPutnik;
+        public System.Windows.Forms.ComboBox CmbAgentIzmeni => cmbAgent;
+        public System.Windows.Forms.ComboBox CmbPutnikPretrazi => cmbPutnikPretrazi;
+        public System.Windows.Forms.ComboBox CmbAgentPretrazi => cmbAgentPretrazi;
+        public System.Windows.Forms.ComboBox CmbSmestajPretrazi => cmbSmestajPretrazi;
         public DataGridView DgvRezervacije => dgvRezervacije;
         public DataGridView DgvStavkeRezervacije => dgvStavkaRez;
         public decimal UkupanIznos

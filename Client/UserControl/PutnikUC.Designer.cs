@@ -98,23 +98,25 @@
             // 
             // btnObrisi
             // 
+            btnObrisi.BackColor = Color.LavenderBlush;
             btnObrisi.ForeColor = Color.Red;
             btnObrisi.Location = new Point(96, 487);
             btnObrisi.Name = "btnObrisi";
             btnObrisi.Size = new Size(162, 42);
             btnObrisi.TabIndex = 11;
             btnObrisi.Text = "Obrisi putnika";
-            btnObrisi.UseVisualStyleBackColor = true;
+            btnObrisi.UseVisualStyleBackColor = false;
             btnObrisi.Click += btnObrisi_Click;
             // 
             // btnIzmeni
             // 
-            btnIzmeni.Location = new Point(96, 394);
+            btnIzmeni.BackColor = Color.LavenderBlush;
+            btnIzmeni.Location = new Point(96, 407);
             btnIzmeni.Name = "btnIzmeni";
             btnIzmeni.Size = new Size(162, 42);
             btnIzmeni.TabIndex = 10;
             btnIzmeni.Text = "Izmeni";
-            btnIzmeni.UseVisualStyleBackColor = true;
+            btnIzmeni.UseVisualStyleBackColor = false;
             btnIzmeni.Click += btnIzmeni_Click;
             // 
             // txtBrojPasosa
@@ -141,6 +143,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.ForeColor = SystemColors.Desktop;
             label5.Location = new Point(15, 313);
             label5.Name = "label5";
             label5.Size = new Size(76, 28);
@@ -150,6 +153,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.ForeColor = SystemColors.Desktop;
             label4.Location = new Point(15, 251);
             label4.Name = "label4";
             label4.Size = new Size(126, 28);
@@ -159,6 +163,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = SystemColors.Desktop;
             label3.Location = new Point(15, 196);
             label3.Name = "label3";
             label3.Size = new Size(147, 28);
@@ -168,6 +173,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = SystemColors.Desktop;
             label2.Location = new Point(15, 135);
             label2.Name = "label2";
             label2.Size = new Size(99, 28);
@@ -177,6 +183,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = SystemColors.Desktop;
             label1.Location = new Point(15, 77);
             label1.Name = "label1";
             label1.Size = new Size(58, 28);
@@ -194,7 +201,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
+            label6.ForeColor = SystemColors.Desktop;
             label6.Location = new Point(768, 32);
             label6.Name = "label6";
             label6.Size = new Size(153, 54);
@@ -214,13 +221,14 @@
             // 
             // btnKreiraj
             // 
+            btnKreiraj.BackColor = Color.LavenderBlush;
             btnKreiraj.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnKreiraj.Location = new Point(729, 490);
             btnKreiraj.Name = "btnKreiraj";
             btnKreiraj.Size = new Size(253, 72);
             btnKreiraj.TabIndex = 3;
             btnKreiraj.Text = "Kreiraj novog putnika";
-            btnKreiraj.UseVisualStyleBackColor = true;
+            btnKreiraj.UseVisualStyleBackColor = false;
             btnKreiraj.Click += btnKreiraj_Click;
             // 
             // groupBox2
@@ -251,6 +259,7 @@
             // 
             // btnOcistiMesto
             // 
+            btnOcistiMesto.ForeColor = SystemColors.Desktop;
             btnOcistiMesto.Location = new Point(374, 315);
             btnOcistiMesto.Name = "btnOcistiMesto";
             btnOcistiMesto.Size = new Size(43, 34);
@@ -261,6 +270,7 @@
             // 
             // btnOcistiBrojPasosa
             // 
+            btnOcistiBrojPasosa.ForeColor = SystemColors.Desktop;
             btnOcistiBrojPasosa.Location = new Point(374, 251);
             btnOcistiBrojPasosa.Name = "btnOcistiBrojPasosa";
             btnOcistiBrojPasosa.Size = new Size(43, 34);
@@ -271,6 +281,7 @@
             // 
             // btnOcistiBrojTelefona
             // 
+            btnOcistiBrojTelefona.ForeColor = SystemColors.Desktop;
             btnOcistiBrojTelefona.Location = new Point(374, 196);
             btnOcistiBrojTelefona.Name = "btnOcistiBrojTelefona";
             btnOcistiBrojTelefona.Size = new Size(43, 34);
@@ -281,6 +292,7 @@
             // 
             // btnOcistiPrezime
             // 
+            btnOcistiPrezime.ForeColor = SystemColors.Desktop;
             btnOcistiPrezime.Location = new Point(374, 135);
             btnOcistiPrezime.Name = "btnOcistiPrezime";
             btnOcistiPrezime.Size = new Size(43, 34);
@@ -291,6 +303,7 @@
             // 
             // btnOcistiIme
             // 
+            btnOcistiIme.ForeColor = SystemColors.Desktop;
             btnOcistiIme.Location = new Point(374, 74);
             btnOcistiIme.Name = "btnOcistiIme";
             btnOcistiIme.Size = new Size(43, 35);
@@ -309,12 +322,13 @@
             // 
             // btnPretrazi
             // 
+            btnPretrazi.BackColor = Color.LavenderBlush;
             btnPretrazi.Location = new Point(127, 394);
             btnPretrazi.Name = "btnPretrazi";
             btnPretrazi.Size = new Size(162, 42);
             btnPretrazi.TabIndex = 10;
             btnPretrazi.Text = "Pretrazi";
-            btnPretrazi.UseVisualStyleBackColor = true;
+            btnPretrazi.UseVisualStyleBackColor = false;
             btnPretrazi.Click += btnPretrazi_Click;
             // 
             // txtBrojPasosaPretrazi
@@ -341,6 +355,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.ForeColor = SystemColors.Desktop;
             label7.Location = new Point(15, 313);
             label7.Name = "label7";
             label7.Size = new Size(76, 28);
@@ -350,6 +365,7 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.ForeColor = SystemColors.Desktop;
             label8.Location = new Point(15, 251);
             label8.Name = "label8";
             label8.Size = new Size(126, 28);
@@ -359,6 +375,7 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.ForeColor = SystemColors.Desktop;
             label9.Location = new Point(15, 196);
             label9.Name = "label9";
             label9.Size = new Size(147, 28);
@@ -368,6 +385,7 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.ForeColor = SystemColors.Desktop;
             label10.Location = new Point(15, 135);
             label10.Name = "label10";
             label10.Size = new Size(99, 28);
@@ -377,6 +395,7 @@
             // label11
             // 
             label11.AutoSize = true;
+            label11.ForeColor = SystemColors.Desktop;
             label11.Location = new Point(15, 77);
             label11.Name = "label11";
             label11.Size = new Size(58, 28);

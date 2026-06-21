@@ -48,6 +48,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Desktop;
             label1.Location = new Point(726, 169);
             label1.Name = "label1";
             label1.Size = new Size(142, 30);
@@ -83,12 +84,14 @@
             // 
             // btnSacuvaj
             // 
+            btnSacuvaj.BackColor = Color.LavenderBlush;
+            btnSacuvaj.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSacuvaj.Location = new Point(242, 388);
             btnSacuvaj.Name = "btnSacuvaj";
             btnSacuvaj.Size = new Size(243, 40);
             btnSacuvaj.TabIndex = 10;
             btnSacuvaj.Text = "Sacuvaj";
-            btnSacuvaj.UseVisualStyleBackColor = true;
+            btnSacuvaj.UseVisualStyleBackColor = false;
             btnSacuvaj.Click += btnSacuvaj_Click;
             // 
             // txtBrojPasosa
@@ -122,50 +125,55 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label6.ForeColor = SystemColors.Desktop;
             label6.Location = new Point(51, 321);
             label6.Name = "label6";
-            label6.Size = new Size(76, 28);
+            label6.Size = new Size(69, 25);
             label6.TabIndex = 4;
             label6.Text = "Mesto:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label5.ForeColor = SystemColors.Desktop;
             label5.Location = new Point(51, 253);
             label5.Name = "label5";
-            label5.Size = new Size(126, 28);
+            label5.Size = new Size(111, 25);
             label5.TabIndex = 3;
             label5.Text = "Broj pasosa:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.Desktop;
             label4.Location = new Point(51, 190);
             label4.Name = "label4";
-            label4.Size = new Size(141, 28);
+            label4.Size = new Size(124, 25);
             label4.TabIndex = 2;
             label4.Text = "Broj telefona:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label3.ForeColor = SystemColors.Desktop;
             label3.Location = new Point(51, 125);
             label3.Name = "label3";
-            label3.Size = new Size(99, 28);
+            label3.Size = new Size(88, 25);
             label3.TabIndex = 1;
             label3.Text = "Prezime: ";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.Desktop;
             label2.Location = new Point(51, 63);
             label2.Name = "label2";
-            label2.Size = new Size(64, 30);
+            label2.Size = new Size(52, 25);
             label2.TabIndex = 0;
             label2.Text = "Ime: ";
             // 

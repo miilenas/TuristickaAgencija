@@ -28,6 +28,11 @@ namespace Client.UserControl
             lblJedinicnaCenaStavke.Text = "0.00 RSD";
             lblUkupnaCenaStavke.Text = "0.00 RSD";
             lblUkupanIznos.Text = "0.00 RSD";
+
+            cmbAgent.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPutnik.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSmestaj.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         public ComboBox CmbSmestaj => cmbSmestaj;
@@ -81,12 +86,12 @@ namespace Client.UserControl
 
         }
 
-        private void btnKreirajPutnika_Click(object sender, EventArgs e)
-        {
-            FrmMain main = (FrmMain)this.FindForm();
-            KreirajPutnikUC uc = new KreirajPutnikUC(controlor.kreirajPutnik());
-            main.ChangePanel(uc);
-        }
+        //private void btnKreirajPutnika_Click(object sender, EventArgs e)
+        //{
+        //    FrmMain main = (FrmMain)this.FindForm();
+        //    KreirajPutnikUC uc = new KreirajPutnikUC(controlor.kreirajPutnik());
+        //    main.ChangePanel(uc);
+        //}
 
         private void btnSacuvajRezervaciju_Click(object sender, EventArgs e)
         {

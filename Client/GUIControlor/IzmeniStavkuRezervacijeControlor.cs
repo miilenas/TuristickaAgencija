@@ -62,7 +62,8 @@ namespace Client.GUIControlor
         public void IzmeniStavku()
         {
             if (uc.CmbSmestaj.SelectedIndex == -1 ||
-                uc.DatumPolaska.Value >= uc.DatumDolaska.Value)
+                uc.DatumPolaska.Value >= uc.DatumDolaska.Value ||
+                string.IsNullOrWhiteSpace(uc.OpisStavke))
             {
                 MessageBox.Show("Sistem ne moze da izmeni stavku rezervacije.");
                 return;

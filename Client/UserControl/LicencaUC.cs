@@ -17,6 +17,9 @@ namespace Client.UserControl
         public LicencaUC()
         {
             InitializeComponent();
+            cmbAgent.DropDownStyle = ComboBoxStyle.DropDownList;
+            CmbTipLicence.DropDownStyle = ComboBoxStyle.DropDownList;
+
             controlor = new LicencaControlor(this);
         }
 

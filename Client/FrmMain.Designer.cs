@@ -84,7 +84,7 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "FrmMain";
-            Text = "FrmMain";
+            Text = "Turisticka agencija";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
