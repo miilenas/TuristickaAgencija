@@ -36,11 +36,11 @@ namespace Common.Domain
                 Agent agent = new Agent
                 {
                     IdAgent = (int)reader["idAgent"],
-                    Ime = (string)reader["ime"],
-                    Prezime = (string)reader["prezime"],
+                    Ime = (string)reader["ime"].ToString().Trim(),
+                    Prezime = (string)reader["prezime"].ToString().Trim(),
                     DatumZaposlenja = DateOnly.FromDateTime((DateTime)reader["datumZaposlenja"]),
-                    Email = (string)reader["email"],
-                    Password= (string)reader["password"]
+                    Email = (string)reader["email"].ToString().Trim(),
+                    Password= (string)reader["password"].ToString().Trim()
                 };
                 agentList.Add(agent);
             }

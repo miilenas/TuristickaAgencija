@@ -33,10 +33,10 @@ namespace Client.GUIControlor
                 return false;
             }
 
-            putnik.Ime = kreirajPutnikUC.Ime;
-            putnik.Prezime = kreirajPutnikUC.Prezime;
-            putnik.BrojTelefona = kreirajPutnikUC.BrojTelefona;
-            putnik.BrojPasosa = kreirajPutnikUC.BrojPasosa;
+            putnik.Ime = kreirajPutnikUC.Ime.Trim();
+            putnik.Prezime = kreirajPutnikUC.Prezime.Trim();
+            putnik.BrojTelefona = kreirajPutnikUC.BrojTelefona.Trim();
+            putnik.BrojPasosa = kreirajPutnikUC.BrojPasosa.Trim();
             putnik.IdMesto = (Mesto)kreirajPutnikUC.CmbMesto.SelectedItem;
 
             if (!PasosJeJedinstven(putnik.BrojPasosa))
@@ -85,7 +85,7 @@ namespace Client.GUIControlor
                 return false;
             }
 
-            return !putnici.Any(p => p.BrojPasosa.Equals(brojPasosa, StringComparison.OrdinalIgnoreCase));
+            return !putnici.Any(p => p.BrojPasosa.Trim().Equals(brojPasosa.Trim(), StringComparison.OrdinalIgnoreCase));
         }
     }
 

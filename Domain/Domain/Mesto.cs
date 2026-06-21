@@ -35,8 +35,8 @@ namespace Common.Domain
                 Mesto mesto = new Mesto
                 {
                     IdMesto = (int)reader["idMesto"],
-                    Grad = (string)reader["grad"],
-                    Drzava = (string)reader["drzava"]
+                    Grad = (string)reader["grad"].ToString().Trim(),
+                    Drzava = (string)reader["drzava"].ToString().Trim()
                 };
                 mestoList.Add(mesto);
             }

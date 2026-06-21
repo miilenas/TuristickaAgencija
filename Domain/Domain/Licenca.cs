@@ -33,7 +33,7 @@ namespace Common.Domain
                 Licenca licenca = new Licenca
                 {
                     IdLicenca = (int)reader["idLicenca"],
-                    TipLicence = (string)reader["tipLicence"]
+                    TipLicence = (string)reader["tipLicence"].ToString().Trim()
                 };
                 licenceList.Add(licenca);
             }

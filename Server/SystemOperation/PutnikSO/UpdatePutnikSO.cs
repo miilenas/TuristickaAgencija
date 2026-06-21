@@ -44,7 +44,7 @@ namespace Server.SystemOperation.PutnikSO
             bool postojiPutnikSaIstimPasosem = broker.GetAll(new Putnik())
                 .Cast<Putnik>()
                 .Any(p => p.IdPutnik != putnik.IdPutnik &&
-                          p.BrojPasosa.Equals(putnik.BrojPasosa, StringComparison.OrdinalIgnoreCase));
+                          p.BrojPasosa.Trim().Equals(putnik.BrojPasosa.Trim(), StringComparison.OrdinalIgnoreCase));
 
             if (postojiPutnikSaIstimPasosem)
                 throw new Exception("Broj pasosa mora biti jedinstven.");

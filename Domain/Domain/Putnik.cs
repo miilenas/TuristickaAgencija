@@ -38,10 +38,10 @@ namespace Common.Domain
             {
                 Putnik putnik = new Putnik();
                 putnik.IdPutnik = (int)reader["idPutnik"];
-                putnik.Ime = (string)reader["ime"];
-                putnik.Prezime = (string)reader["prezime"];
-                putnik.BrojTelefona = (string)reader["brojTelefona"];
-                putnik.BrojPasosa = (string)reader["brojPasosa"];
+                putnik.Ime = (string)reader["ime"].ToString().Trim();
+                putnik.Prezime = (string)reader["prezime"].ToString().Trim();
+                putnik.BrojTelefona = (string)reader["brojTelefona"].ToString().Trim();
+                putnik.BrojPasosa = (string)reader["brojPasosa"].ToString().Trim();
                 putnik.IdMesto = new Mesto();
                 if (reader["idMesto"] != DBNull.Value)
                 {

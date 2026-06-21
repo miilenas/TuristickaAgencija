@@ -30,10 +30,10 @@ namespace Client.GUIControlor
                 Putnik putnik = new Putnik()
                 {
                     IdPutnik = Convert.ToInt32(putnikUC.DgvSviPutnici.SelectedRows[0].Cells["IdPutnik"].Value),
-                    Ime = putnikUC.Ime,
-                    Prezime = putnikUC.Prezime,
-                    BrojTelefona = putnikUC.BrojTelefona,
-                    BrojPasosa = putnikUC.BrojPasosa,
+                    Ime = putnikUC.Ime.Trim(),
+                    Prezime = putnikUC.Prezime.Trim(),
+                    BrojTelefona = putnikUC.BrojTelefona.Trim(),
+                    BrojPasosa = putnikUC.BrojPasosa.Trim(),
                     IdMesto = (Mesto)putnikUC.CmbMesto.SelectedItem
                 };
 
@@ -229,6 +229,9 @@ namespace Client.GUIControlor
 
             putnikUC.DgvSviPutnici.DataSource = putnici;
             putnikUC.DgvSviPutnici.Columns["IdMesto"].HeaderText = "Mesto";
+            putnikUC.DgvSviPutnici.Columns["BrojPasosa"].HeaderText = "Broj pasosa";
+            putnikUC.DgvSviPutnici.Columns["BrojTelefona"].HeaderText = "Broj telefona";
+
 
             putnikUC.DgvSviPutnici.Columns["IdPutnik"].Visible = false;
             putnikUC.DgvSviPutnici.Columns["IdColumn"].Visible = false;
@@ -278,7 +281,7 @@ namespace Client.GUIControlor
 
             return !putnici.Any(p =>
                 p.IdPutnik != idPutnik &&
-                p.BrojPasosa.Equals(brojPasosa, StringComparison.OrdinalIgnoreCase));
+                p.BrojPasosa.Trim().Equals(brojPasosa.Trim(), StringComparison.OrdinalIgnoreCase));
         }
 
         public Putnik OdabraniPutnik()
