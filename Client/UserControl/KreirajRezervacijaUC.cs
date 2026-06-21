@@ -47,6 +47,17 @@ namespace Client.UserControl
             set => lblUkupanIznos.Text = value.ToString("0.00") + " RSD";
         }
 
+        public void OcistiFormuZaStavku()
+        {
+            cmbSmestaj.SelectedIndex = -1;
+            numKolicina.Value = 1;
+            txtOpis.Clear();
+            datePolazak.Value = DateTime.Today;
+            dateDolazak.Value = DateTime.Today;
+            lblJedinicnaCenaStavke.Text = "0.00 RSD";
+            lblUkupnaCenaStavke.Text = "0.00 RSD";
+        }
+
         private void PrikaziCeneStavke()
         {
             if (cmbSmestaj.SelectedItem is Smestaj smestaj)
@@ -79,7 +90,11 @@ namespace Client.UserControl
 
         private void btnSacuvajRezervaciju_Click(object sender, EventArgs e)
         {
-            controlor.ZapamtiRezervacija();
+            if (controlor.ZapamtiRezervacija())
+            {
+                FrmMain main = (FrmMain)this.FindForm();
+                main.ChangePanel(new RezervacijaUC(null));
+            }
         }
     }
 }

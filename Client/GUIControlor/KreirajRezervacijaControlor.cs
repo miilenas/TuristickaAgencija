@@ -13,24 +13,47 @@ namespace Client.GUIControlor
         public KreirajRezervacijaControlor(KreirajRezervacijaUC rezervacijaUC, Rezervacija kreiranaRezervacija)
         {
             this.rezervacijaUC = rezervacijaUC;
-            this.rezervacija = kreiranaRezervacija ?? new Rezervacija();
             this.uneteStavkeRezervacije = new List<StavkaRezervacije>();
 
             VratiListuSviAgent();
             VratiListuSviPutnik();
             VratiListuSviSmestaj();
 
+            this.rezervacija = kreiranaRezervacija;
+
             rezervacijaUC.UkupanIznos = 0;
         }
 
         public void UbaciStavkuRezervacije()
         {
+            if (rezervacija == null)
+            {
+                MessageBox.Show("Sistem ne moze da kreira rezervaciju");
+                return;
+            }
+
             if (rezervacijaUC.CmbSmestaj.SelectedIndex == -1 ||
                 rezervacijaUC.Kolicina <= 0 ||
                 String.IsNullOrWhiteSpace(rezervacijaUC.OpisStavke) ||
                 rezervacijaUC.DatePolazak.Value >= rezervacijaUC.DateDolazak.Value)
             {
                 MessageBox.Show("Sistem ne moze da sacuva stavku rezervacije!");
+                return;
+            }
+            DateTime datumOd = rezervacijaUC.DatePolazak.Value.Date;
+            DateTime datumDo = rezervacijaUC.DateDolazak.Value.Date;
+
+            int brojNocenja = (datumDo - datumOd).Days;
+
+            if (brojNocenja <= 0)
+            {
+                MessageBox.Show("Datum dolaska mora biti posle datuma polaska.");
+                return;
+            }
+
+            if (brojNocenja != rezervacijaUC.Kolicina)
+            {
+                MessageBox.Show("Kolicina mora odgovarati broju nocenja.");
                 return;
             }
 
@@ -42,7 +65,7 @@ namespace Client.GUIControlor
 
             StavkaRezervacije stavka = new StavkaRezervacije()
             {
-                IdRezervacija = rezervacija.IdRezervacija,
+                IdRezervacija = 0,
                 Rb = uneteStavkeRezervacije.Count + 1,
                 IdSmestaj = smestaj,
                 JedinicnaCena = jedinicnaCena,
@@ -57,20 +80,23 @@ namespace Client.GUIControlor
 
             DGV(uneteStavkeRezervacije);
             rezervacijaUC.UkupanIznos = IzracunajUkupanIznos();
+            rezervacijaUC.OcistiFormuZaStavku();
         }
 
-        public void ZapamtiRezervacija()
+        public bool ZapamtiRezervacija()
         {
+            if (rezervacija == null)
+            {
+                MessageBox.Show("Sistem ne moze da zapamti rezervaciju.");
+                return false;
+            }
+
             if (rezervacijaUC.CmbAgent.SelectedIndex == -1 ||
                 rezervacijaUC.CmbPutnik.SelectedIndex == -1 ||
                 uneteStavkeRezervacije.Count == 0)
             {
-                MessageBox.Show(
-                    "Potrebno je izabrati agenta, putnika i uneti bar jednu stavku rezervacije!",
-                    "Niste popunili sva polja",
-                    MessageBoxButtons.OK
-                );
-                return;
+                MessageBox.Show("Sistem ne moze da zapamti rezervaciju.");
+                return false;
             }
 
             rezervacija.Agent = (Agent)rezervacijaUC.CmbAgent.SelectedItem;
@@ -82,11 +108,14 @@ namespace Client.GUIControlor
 
             if (response.IsSuccess)
             {
+                rezervacija = (Rezervacija)response.Result;
                 MessageBox.Show("Sistem je zapamtio rezervaciju.");
+                return true;
             }
             else
             {
                 MessageBox.Show("Sistem ne moze da zapamti rezervaciju.");
+                return false;
             }
         }
 
@@ -100,10 +129,18 @@ namespace Client.GUIControlor
             rezervacijaUC.DgvStavkeRezervacije.DataSource = null;
             rezervacijaUC.DgvStavkeRezervacije.DataSource = stavke;
 
+            rezervacijaUC.DgvStavkeRezervacije.Columns["IdSmestaj"].HeaderText = "Smestaj";
+            rezervacijaUC.DgvStavkeRezervacije.Columns["OpisStavke"].HeaderText = "Opis stavke";
+            rezervacijaUC.DgvStavkeRezervacije.Columns["DatumPolaska"].HeaderText = "Datum polaska";
+            rezervacijaUC.DgvStavkeRezervacije.Columns["DatumDolaska"].HeaderText = "Datum dolaska";
+            rezervacijaUC.DgvStavkeRezervacije.Columns["UkupnaCena"].HeaderText = "Ukupna cena";
+            rezervacijaUC.DgvStavkeRezervacije.Columns["JedinicnaCena"].HeaderText = "Jedinicna cena";
+
             SakrijKolonu("IdRezervacija");
             SakrijKolonu("TableName");
             SakrijKolonu("Values");
             SakrijKolonu("IdCondition");
+            SakrijKolonu("IdColumn");
             SakrijKolonu("Update");
             SakrijKolonu("FullName");
         }
@@ -169,18 +206,17 @@ namespace Client.GUIControlor
 
         public Putnik kreirajPutnik()
         {
-            return new Putnik();
-            //Response response = Communication.Instance.CreatePutnik(new Putnik());
+            Response response = Communication.Instance.CreatePutnik(new Putnik());
 
-            //if (response.IsSuccess)
-            //{
-            //    MessageBox.Show("Sistem je kreirao putnika");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Sistem ne moze da kreira putnika");
-            //}
-            //return (Putnik)response.Result;
+            if (response.IsSuccess)
+            {
+                MessageBox.Show("Sistem je kreirao putnika");
+            }
+            else
+            {
+                MessageBox.Show("Sistem ne moze da kreira putnika");
+            }
+            return (Putnik)response.Result;
         }
 
     }

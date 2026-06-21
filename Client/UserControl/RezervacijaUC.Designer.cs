@@ -294,7 +294,8 @@
             // 
             btnObrisiStavku.BackColor = SystemColors.ControlLight;
             btnObrisiStavku.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnObrisiStavku.Location = new Point(288, 576);
+            btnObrisiStavku.ForeColor = Color.Red;
+            btnObrisiStavku.Location = new Point(314, 462);
             btnObrisiStavku.Margin = new Padding(4);
             btnObrisiStavku.Name = "btnObrisiStavku";
             btnObrisiStavku.Size = new Size(178, 45);
@@ -307,7 +308,7 @@
             // 
             btnIzmeniStavku.BackColor = SystemColors.ControlLight;
             btnIzmeniStavku.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnIzmeniStavku.Location = new Point(74, 576);
+            btnIzmeniStavku.Location = new Point(21, 471);
             btnIzmeniStavku.Margin = new Padding(4);
             btnIzmeniStavku.Name = "btnIzmeniStavku";
             btnIzmeniStavku.Size = new Size(178, 45);
@@ -320,12 +321,12 @@
             // 
             btnDodajStavku.BackColor = SystemColors.ControlLight;
             btnDodajStavku.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDodajStavku.Location = new Point(124, 514);
+            btnDodajStavku.Location = new Point(147, 584);
             btnDodajStavku.Margin = new Padding(4);
             btnDodajStavku.Name = "btnDodajStavku";
             btnDodajStavku.Size = new Size(222, 45);
             btnDodajStavku.TabIndex = 8;
-            btnDodajStavku.Text = "Dodaj stavku";
+            btnDodajStavku.Text = "Dodaj novu stavku";
             btnDodajStavku.UseVisualStyleBackColor = false;
             btnDodajStavku.Click += btnDodajStavku_Click;
             // 
@@ -381,7 +382,7 @@
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Name = "RezervacijaUC";
-            Size = new Size(1661, 833);
+            Size = new Size(1746, 833);
             ((System.ComponentModel.ISupportInitialize)dgvRezervacije).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

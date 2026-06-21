@@ -12,7 +12,7 @@ namespace Common.Domain
         public int IdLicenca { get; set; }
         public string TipLicence { get; set; }
 
-        public AgentLicenca agentLicenca { get; set; }
+        public AgentLicenca AgentLicenca { get; set; }
         public string TableName => $"Licenca";
 
         public string Values => $"'{TipLicence}'";

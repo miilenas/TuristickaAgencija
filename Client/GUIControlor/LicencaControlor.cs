@@ -33,7 +33,7 @@ namespace Client.GUIControlor
                 licencaUC.CmbAgent.SelectedIndex == -1 ||
                 licencaUC.DtpDatumIzdavanja.Value >= licencaUC.DtpDatumIsteka.Value)
             {
-                MessageBox.Show("Molimo Vas popunite sva polja ispravno.");
+                MessageBox.Show("Sistem ne moze da zapamti licencu.");
                 return;
             }
 
@@ -42,6 +42,15 @@ namespace Client.GUIControlor
                 TipLicence = licencaUC.CmbTipLicence.SelectedValue.ToString()
             };
 
+            DateTime datumOd = licencaUC.DtpDatumIzdavanja.Value;
+            DateTime datumDo = licencaUC.DtpDatumIsteka.Value;
+            int dani = (datumDo - datumOd).Days;
+            if (dani <= 180)
+            {
+                MessageBox.Show("Minimalno trajanje licence je 180 dana", "Greska");
+                return;
+            }
+
             AgentLicenca agentLicenca = new AgentLicenca()
             {
                 Agent = (Agent)licencaUC.CmbAgent.SelectedItem,
@@ -49,13 +58,15 @@ namespace Client.GUIControlor
                 DatumIsteka = DateOnly.FromDateTime(licencaUC.DtpDatumIsteka.Value)
             };
 
-            licenca.agentLicenca = agentLicenca;
+
+            licenca.AgentLicenca = agentLicenca;
 
             Response response = Communication.Instance.UbaciLicenca(licenca);
 
             if (response.IsSuccess)
             {
                 MessageBox.Show("Sistem je zapamtio licencu.");
+                licencaUC.OcistiFormu();
             }
             else
             {

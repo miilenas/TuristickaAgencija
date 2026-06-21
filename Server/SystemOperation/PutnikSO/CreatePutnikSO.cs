@@ -39,6 +39,13 @@ namespace Server.SystemOperation.PutnikSO
 
             if (putnik.IdMesto == null || putnik.IdMesto.IdMesto == 0)
                 throw new Exception("Mesto putnika je obavezno.");
+
+            bool postojiPutnikSaIstimPasosem = broker.GetAll(new Putnik())
+                .Cast<Putnik>()
+                .Any(p => p.BrojPasosa.Equals(putnik.BrojPasosa, StringComparison.OrdinalIgnoreCase));
+
+            if (postojiPutnikSaIstimPasosem)
+                throw new Exception("Broj pasosa mora biti jedinstven.");
         }
 
         protected override void ExecuteOperation()

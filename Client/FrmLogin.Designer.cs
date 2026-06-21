@@ -33,11 +33,13 @@
             btnLogin = new Button();
             label1 = new Label();
             label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             SuspendLayout();
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(242, 106);
+            txtEmail.Location = new Point(263, 140);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(267, 38);
@@ -45,7 +47,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(242, 183);
+            txtPassword.Location = new Point(263, 217);
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(267, 38);
@@ -53,7 +55,7 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(242, 258);
+            btnLogin.Location = new Point(263, 292);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(267, 38);
             btnLogin.TabIndex = 2;
@@ -64,7 +66,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(130, 109);
+            label1.Location = new Point(151, 143);
             label1.Name = "label1";
             label1.Size = new Size(58, 25);
             label1.TabIndex = 3;
@@ -73,24 +75,46 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(130, 186);
+            label2.Location = new Point(151, 220);
             label2.Name = "label2";
             label2.Size = new Size(75, 25);
             label2.TabIndex = 4;
             label2.Text = "Lozinka:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(263, 82);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 30);
+            label3.TabIndex = 5;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Desktop;
+            label4.Location = new Point(244, 44);
+            label4.Name = "label4";
+            label4.Size = new Size(314, 38);
+            label4.TabIndex = 6;
+            label4.Text = "Turisticka agencija MAT";
             // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);
             Name = "FrmLogin";
-            Text = "Form1";
+            Text = "Dobro dosli!";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -102,5 +126,7 @@
         private Button btnLogin;
         private Label label1;
         private Label label2;
+        private Label label3;
+        private Label label4;
     }
 }

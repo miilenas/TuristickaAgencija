@@ -195,7 +195,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(639, 32);
+            label6.Location = new Point(768, 32);
             label6.Name = "label6";
             label6.Size = new Size(153, 54);
             label6.TabIndex = 1;
@@ -204,18 +204,18 @@
             // dgvSviPutnici
             // 
             dgvSviPutnici.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSviPutnici.Location = new Point(458, 89);
+            dgvSviPutnici.Location = new Point(424, 89);
             dgvSviPutnici.Name = "dgvSviPutnici";
             dgvSviPutnici.RowHeadersWidth = 62;
             dgvSviPutnici.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvSviPutnici.Size = new Size(542, 395);
+            dgvSviPutnici.Size = new Size(874, 395);
             dgvSviPutnici.TabIndex = 2;
             dgvSviPutnici.CellClick += dgvSviPutnici_CellClick;
             // 
             // btnKreiraj
             // 
             btnKreiraj.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnKreiraj.Location = new Point(587, 544);
+            btnKreiraj.Location = new Point(729, 490);
             btnKreiraj.Name = "btnKreiraj";
             btnKreiraj.Size = new Size(253, 72);
             btnKreiraj.TabIndex = 3;
@@ -242,7 +242,7 @@
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(txtImePretrazi);
             groupBox2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(1059, 71);
+            groupBox2.Location = new Point(1322, 71);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(452, 565);
             groupBox2.TabIndex = 13;
@@ -400,7 +400,7 @@
             Controls.Add(label6);
             Controls.Add(groupBox1);
             Name = "PutnikUC";
-            Size = new Size(1660, 742);
+            Size = new Size(1777, 759);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSviPutnici).EndInit();

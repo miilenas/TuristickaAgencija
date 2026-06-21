@@ -85,6 +85,11 @@ namespace Client.UserControl
         {
             FrmMain main = (FrmMain)this.FindForm();
             Putnik putnik = controlor.CreatePutnik();
+            if (putnik == null)
+            {
+                return;
+            }
+
             KreirajPutnikUC uc = new KreirajPutnikUC(putnik);
             main.ChangePanel(uc);
         }

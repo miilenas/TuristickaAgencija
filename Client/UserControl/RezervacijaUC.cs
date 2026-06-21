@@ -40,7 +40,6 @@ namespace Client.UserControl
             set => lblUkupanIznos.Text = value.ToString("0.00") + " RSD";
         }
 
-
         private void dgvRezervacije_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -50,7 +49,6 @@ namespace Client.UserControl
             controlor.OdabranaRezervacija();
 
         }
-
         private void btnDodajStavku_Click(object sender, EventArgs e)
         {
             if (controlor.rezervacijaDTO == null || controlor.rezervacijaDTO.IdRezervacija == 0)
@@ -66,8 +64,13 @@ namespace Client.UserControl
         private void btnKreirajRezervaciju_Click(object sender, EventArgs e)
         {
             FrmMain main = (FrmMain)this.FindForm();
-            Rezervacija rez = controlor.KreirajRezervacija();
-            KreirajRezervacijaUC uc = new KreirajRezervacijaUC(rez);
+            Rezervacija kreiranaRezervacija = controlor.KreirajRezervacija();
+            if (kreiranaRezervacija == null)
+            {
+                return;
+            }
+
+            KreirajRezervacijaUC uc = new KreirajRezervacijaUC(kreiranaRezervacija);
             main.ChangePanel(uc);
         }
 

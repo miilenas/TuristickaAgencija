@@ -35,7 +35,12 @@ namespace Client.UserControl
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            controlor.ZapamtiPutnik();
+            if (controlor.ZapamtiPutnik())
+            {
+                FrmMain main = (FrmMain)this.FindForm();
+                PutnikUC uc = new PutnikUC();
+                main.ChangePanel(uc);
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Server
         private BrokerDB broker;
 
         private static Controler instance;
-        private Putnik kriterijum;
+       // private Putnik kriterijum;
 
         public static Controler Instance
         {

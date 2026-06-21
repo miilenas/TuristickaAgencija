@@ -36,7 +36,7 @@ namespace Client.GUIControlor
             }
             catch (SocketException ex)
             {
-                MessageBox.Show("Neupesno povezivanje sa serverom: "+ex);
+                MessageBox.Show("Neupesno povezivanje sa serverom!");
             }
         }
 

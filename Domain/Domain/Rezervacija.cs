@@ -14,22 +14,19 @@ namespace Common.Domain
         public decimal UkupanIznos { get; set; }
         public Agent? Agent { get; set; }
         public Putnik? Putnik { get; set; }
-       //public DateTime sessionTime { get; set; } = DateTime.Now;
         public List<StavkaRezervacije> stavkaRezervacijeList { get; set; }
         public string TableName => "Rezervacija";
         public string Values =>
         $"{UkupanIznos.ToString(CultureInfo.InvariantCulture)}, " +
-        $"{Agent.IdAgent}, " +
-        $"{Putnik.IdPutnik}";
+        $"{(Agent != null ? Agent.IdAgent.ToString() : "NULL")}, " +
+        $"{(Putnik != null ? Putnik.IdPutnik.ToString() : "NULL")}";
 
         public string IdCondition => $"idRezervacija= {IdRezervacija}";
 
         public string Update =>
             $"ukupanIznos={UkupanIznos}," +
-            $"idAgent = {(Agent != null ? Agent.IdAgent : null)}, " +
-            $"idPutnik = {(Putnik != null ? Putnik.IdPutnik : null)} ";
-          // + $"sessionTime = '{sessionTime:yyyy-MM-dd HH:mm:ss}'";
-
+            $"idAgent = {(Agent != null ? Agent.IdAgent.ToString() : "NULL")}, " +
+            $"idPutnik = {(Putnik != null ? Putnik.IdPutnik.ToString() : "NULL")} ";
         public string FullName => "";
 
         public string IdColumn => $"idRezervacija";
@@ -53,7 +50,6 @@ namespace Common.Domain
                 {
                     rezervacija.Putnik.IdPutnik = (int)reader["idPutnik"];
                 }
-               // rezervacija.sessionTime = reader.GetDateTime(reader.GetOrdinal("sessionTime"));
                 rezervacijaList.Add(rezervacija);
             }
             return rezervacijaList;

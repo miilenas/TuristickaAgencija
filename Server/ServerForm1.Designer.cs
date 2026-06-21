@@ -31,15 +31,16 @@
             textBox1 = new TextBox();
             buttonStop = new Button();
             buttonStart = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(231, 105);
+            textBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(270, 158);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(335, 68);
+            textBox1.Size = new Size(250, 42);
             textBox1.TabIndex = 5;
             textBox1.Text = "Server nije pokrenut";
             textBox1.TextAlign = HorizontalAlignment.Center;
@@ -64,11 +65,22 @@
             buttonStart.UseVisualStyleBackColor = true;
             buttonStart.Click += buttonStart_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(336, 79);
+            label1.Name = "label1";
+            label1.Size = new Size(116, 45);
+            label1.TabIndex = 6;
+            label1.Text = "Server";
+            // 
             // ServerForm1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(buttonStop);
             Controls.Add(buttonStart);
@@ -83,5 +95,6 @@
         private TextBox textBox1;
         private Button buttonStop;
         private Button buttonStart;
+        private Label label1;
     }
 }

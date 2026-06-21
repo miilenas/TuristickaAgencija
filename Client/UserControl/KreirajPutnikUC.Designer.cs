@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            cmbMesto = new ComboBox();
             btnSacuvaj = new Button();
             txtBrojPasosa = new TextBox();
             txtBrojTelefona = new TextBox();
@@ -40,7 +41,6 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            cmbMesto = new ComboBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(308, 46);
+            label1.Location = new Point(726, 169);
             label1.Name = "label1";
             label1.Size = new Size(142, 30);
             label1.TabIndex = 0;
@@ -67,11 +67,19 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(88, 93);
+            groupBox1.Location = new Point(506, 216);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(660, 461);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
+            // 
+            // cmbMesto
+            // 
+            cmbMesto.FormattingEnabled = true;
+            cmbMesto.Location = new Point(242, 316);
+            cmbMesto.Name = "cmbMesto";
+            cmbMesto.Size = new Size(243, 33);
+            cmbMesto.TabIndex = 11;
             // 
             // btnSacuvaj
             // 
@@ -161,23 +169,14 @@
             label2.TabIndex = 0;
             label2.Text = "Ime: ";
             // 
-            // cmbMesto
-            // 
-            cmbMesto.FormattingEnabled = true;
-            cmbMesto.Location = new Point(242, 316);
-            cmbMesto.Name = "cmbMesto";
-            cmbMesto.Size = new Size(243, 33);
-            cmbMesto.TabIndex = 11;
-            // 
             // KreirajPutnikUC
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(827, 594);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Name = "KreirajPutnikUC";
-            Text = "KreirajPutnikUC";
+            Size = new Size(1570, 806);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

@@ -18,26 +18,22 @@ namespace Server.SystemOperation.Rezervacije
         }
         protected override void ExecuteOperation()
         {
-            if (rezervacija == null)
+            if (rezervacija == null ||
+                rezervacija.Agent == null ||
+                rezervacija.Putnik == null ||
+                rezervacija.stavkaRezervacijeList == null ||
+                rezervacija.stavkaRezervacijeList.Count == 0)
             {
-                throw new Exception("Rezervacija ne sme biti null.");
-            }
-
-            if (rezervacija.Agent == null || rezervacija.Putnik == null)
-            {
-                throw new Exception("Rezervacija mora imati agenta i putnika.");
-            }
-
-            if (rezervacija.stavkaRezervacijeList == null || rezervacija.stavkaRezervacijeList.Count == 0)
-            {
-                throw new Exception("Rezervacija mora imati bar jednu stavku.");
+                throw new Exception("Rezervacija nema sve obavezne podatke.");
             }
 
             Result = (Rezervacija)broker.Add(rezervacija);
 
-            foreach (StavkaRezervacije stavka in rezervacija.stavkaRezervacijeList)
+            for (int i = 0; i < rezervacija.stavkaRezervacijeList.Count; i++)
             {
+                StavkaRezervacije stavka = rezervacija.stavkaRezervacijeList[i];
                 stavka.IdRezervacija = Result.IdRezervacija;
+                stavka.Rb = i + 1;
                 broker.Add(stavka);
             }
 

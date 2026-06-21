@@ -5,6 +5,7 @@ using Common.Model;
 using System;
 using System.Collections.Generic;
 using System.Net.Sockets;
+using System.Text.Json;
 
 namespace Client
 {
@@ -33,6 +34,18 @@ namespace Client
             serializer = new JsonNetworkSerializer(socket);
         }
 
+        private T ReadResponseResult<T>(Response response) where T : class
+        {
+            if (!response.IsSuccess ||
+                response.Result == null ||
+                response.Result is JsonElement element && element.ValueKind == JsonValueKind.Null)
+            {
+                return null;
+            }
+
+            return serializer.ReadType<T>(response.Result);
+        }
+
         internal Response Login(Agent agent)
         {
             Request request = new Request()
@@ -43,7 +56,7 @@ namespace Client
 
             serializer.Send(request);
             Response response = serializer.Receive<Response>();
-            response.Result = serializer.ReadType<Agent>(response.Result);
+            response.Result = ReadResponseResult<Agent>(response);
             return response;
         }
 
@@ -57,7 +70,7 @@ namespace Client
 
             serializer.Send(request);
             Response response = serializer.Receive<Response>();
-            response.Result = serializer.ReadType<Rezervacija>(response.Result);
+            response.Result = ReadResponseResult<Rezervacija>(response);
             return response;
         }
 
@@ -71,7 +84,7 @@ namespace Client
 
             serializer.Send(request);
             Response response = serializer.Receive<Response>();
-            response.Result = serializer.ReadType<List<Rezervacija>>(response.Result);
+            response.Result = ReadResponseResult<List<Rezervacija>>(response);
             return response;
         }
 
@@ -85,7 +98,7 @@ namespace Client
 
             serializer.Send(request);
             Response response = serializer.Receive<Response>();
-            response.Result = serializer.ReadType<Rezervacija>(response.Result);
+            response.Result = ReadResponseResult<Rezervacija>(response);
             return response;
         }
 
@@ -99,7 +112,7 @@ namespace Client
 
             serializer.Send(request);
             Response response = serializer.Receive<Response>();
-            response.Result = serializer.ReadType<Putnik>(response.Result);
+            response.Result = ReadResponseResult<Putnik>(response);
             return response;
         }
 
@@ -113,7 +126,7 @@ namespace Client
 
             serializer.Send(request);
             Response response = serializer.Receive<Response>();
-            response.Result = serializer.ReadType<Putnik>(response.Result);
+            response.Result = ReadResponseResult<Putnik>(response);
             return response;
         }
 
@@ -127,7 +140,7 @@ namespace Client
 
             serializer.Send(request);
             Response response = serializer.Receive<Response>();
-            response.Result = serializer.ReadType<Putnik>(response.Result);
+            response.Result = ReadResponseResult<Putnik>(response);
             return response;
         }
 
@@ -141,7 +154,7 @@ namespace Client
 
             serializer.Send(request);
             Response response = serializer.Receive<Response>();
-            response.Result = serializer.ReadType<List<Putnik>>(response.Result);
+            response.Result = ReadResponseResult<List<Putnik>>(response);
             return response;
         }
 
@@ -155,7 +168,7 @@ namespace Client
 
             serializer.Send(request);
             Response response = serializer.Receive<Response>();
-            response.Result = serializer.ReadType<Licenca>(response.Result);
+            response.Result = ReadResponseResult<Licenca>(response);
             return response;
         }
 

@@ -16,7 +16,7 @@ namespace Client
         private void btnLogin_Click(object sender, EventArgs e)
         {
             LoginControler.GetInstance().Login();
-            
+
         }
         public bool Validation()
         {
@@ -27,6 +27,6 @@ namespace Client
             return true;
         }
 
-
+      
     }
 }

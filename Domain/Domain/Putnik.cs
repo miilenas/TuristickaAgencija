@@ -15,19 +15,17 @@ namespace Common.Domain
         public string BrojTelefona { get; set; }
         public string BrojPasosa { get; set; }
         public Mesto IdMesto { get; set; }
-    //    public DateTime sessionTime { get; set; } = DateTime.Now;
 
         public string TableName => "Putnik";
 
         public string Values => $"'{Ime}', '{Prezime}', '{BrojTelefona}', '{BrojPasosa}', {(IdMesto != null ? IdMesto.IdMesto : "null")} ";
-           //+ $"'{sessionTime:yyyy-MM-ddTHH:mm:ss}'";
+           
 
         public string IdCondition => $"idPutnik = {IdPutnik}";
 
         public string Update => $"ime = '{Ime}', prezime = '{Prezime}', brojTelefona = '{BrojTelefona}', brojPasosa='{BrojPasosa}'," +
             $" idMesto = {(IdMesto != null ? IdMesto.IdMesto : "null")} ";
-           //+ $"sessionTime = '{sessionTime:yyyy-MM-dd HH:mm:ss}'";
-
+           
         public string FullName => Ime + " " + Prezime;
 
         public string IdColumn => $"idPutnik";
@@ -49,8 +47,7 @@ namespace Common.Domain
                 {
                     putnik.IdMesto.IdMesto = (int)reader["idMesto"];
                 }
-               // putnik.sessionTime = reader.GetDateTime(reader.GetOrdinal("sessionTime"));
-                putnikList.Add(putnik);
+                 putnikList.Add(putnik);
             }
             return putnikList;
         }

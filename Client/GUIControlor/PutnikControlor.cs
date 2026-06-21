@@ -37,6 +37,12 @@ namespace Client.GUIControlor
                     IdMesto = (Mesto)putnikUC.CmbMesto.SelectedItem
                 };
 
+                if (!PasosJeJedinstven(putnik.BrojPasosa, putnik.IdPutnik))
+                {
+                    MessageBox.Show("Broj pasosa mora biti jedinstven.", "Greska");
+                    return;
+                }
+
                 Response response = Communication.Instance.UpdatePutnik(putnik);
 
                 if (response.IsSuccess)
@@ -47,7 +53,14 @@ namespace Client.GUIControlor
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da izmeni putnika.");
+                    if (!String.IsNullOrWhiteSpace(response.ExceptionMessage))
+                    {
+                        MessageBox.Show(response.ExceptionMessage, "Greska");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sistem ne moze da sacuva putnika.");
+                    }
                 }
             }
         }
@@ -73,6 +86,10 @@ namespace Client.GUIControlor
                         MessageBox.Show("Sistem ne moze da obrise putnika.");
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Sistem ne moze da obrise putnika.");
             }
         }
 
@@ -123,10 +140,18 @@ namespace Client.GUIControlor
             if (response.IsSuccess)
             {
                 List<Putnik> rezultat = (List<Putnik>)response.Result;
+
+                if (rezultat == null || rezultat.Count == 0)
+                {
+                    putnikUC.DgvSviPutnici.DataSource = null;
+                    MessageBox.Show("Sistem ne moze da nadje putnike po zadatim kriterijumima.");
+                    return;
+                }
+
                 putnikUC.DgvSviPutnici.DataSource = null;
                 DGV(rezultat);
 
-              //  MessageBox.Show("Sistem je nasao putnike po zadatim kriterijumima.");
+               MessageBox.Show("Sistem je nasao putnike po zadatim kriterijumima.");
             }
             else
             {
@@ -141,20 +166,17 @@ namespace Client.GUIControlor
 
         public Putnik CreatePutnik()
         {
-            return new Putnik();
-
-            //Response response = Communication.Instance.CreatePutnik(new Putnik());
-
-            //if (response.IsSuccess)
-            //{
-            //    MessageBox.Show("Sistem je kreirao putnika.");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Sistem ne moze da kreira putnika. >>> " + response.ExceptionMessage);
-            //}
-
-            //return (Putnik)response.Result;
+            try
+            {
+                Putnik putnik = new Putnik();
+                MessageBox.Show("Sistem je kreirao putnika.");
+                return putnik;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Sistem ne moze da kreira putnika.");
+                return null;
+            }
         }
 
         public void UcitajPretraziMestoCMB(List<Mesto> mesta)
@@ -226,7 +248,7 @@ namespace Client.GUIControlor
                 putnikUC.CmbMesto.SelectedIndex == -1 ||
                 putnikUC.DgvSviPutnici.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Molimo Vas izaberite putnika i popunite sva polja.", "Greska");
+                MessageBox.Show("Sistem ne moze da nadje putnika.", "Greska");
                 return false;
             }
 
@@ -245,6 +267,20 @@ namespace Client.GUIControlor
             return mesta;
         }
 
+        private bool PasosJeJedinstven(string brojPasosa, int idPutnik)
+        {
+            List<Putnik> putnici = VratiListuSviPutnik();
+
+            if (putnici == null)
+            {
+                return false;
+            }
+
+            return !putnici.Any(p =>
+                p.IdPutnik != idPutnik &&
+                p.BrojPasosa.Equals(brojPasosa, StringComparison.OrdinalIgnoreCase));
+        }
+
         public Putnik OdabraniPutnik()
         {
             Putnik putnik = new Putnik();
@@ -259,7 +295,7 @@ namespace Client.GUIControlor
                 putnikUC.BrojPasosa = putnik.BrojPasosa;
                 putnikUC.CmbMesto.SelectedValue = putnik.IdMesto.IdMesto;
 
-                //MessageBox.Show("Sistem je nasao putnika.");
+                MessageBox.Show("Sistem je nasao putnika.");
             }
             catch (Exception)
             {

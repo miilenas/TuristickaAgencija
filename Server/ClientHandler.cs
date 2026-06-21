@@ -128,7 +128,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Greška na serveru: " + ex.Message);
+                Debug.WriteLine("Greska na serveru: " + ex.Message);
                 response.IsSuccess = false;
                 response.ExceptionMessage = ex.Message;
             }

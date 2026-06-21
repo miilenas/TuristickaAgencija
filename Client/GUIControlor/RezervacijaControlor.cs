@@ -161,7 +161,7 @@ namespace Client.GUIControlor
 
             if (response.IsSuccess && rezultat.Count > 0)
             {
-               // MessageBox.Show("Sistem je nasao rezervacije po zadatim kriterijumima.");
+                MessageBox.Show("Sistem je nasao rezervacije po zadatim kriterijumima.");
                 rezervacijaUC.DgvRezervacije.DataSource = null;
                 this.DGV(rezultat);
             }
@@ -222,7 +222,7 @@ namespace Client.GUIControlor
                 this.DGVStavka(rezervacija.stavkaRezervacijeList);
                 OsveziUkupanIznos();
 
-              //  MessageBox.Show("Sistem je nasao rezervaciju.");
+                MessageBox.Show("Sistem je nasao rezervaciju.");
             }
             catch (Exception)
             {
@@ -306,7 +306,13 @@ namespace Client.GUIControlor
 
         public Rezervacija KreirajRezervacija()
         {
-            return new Rezervacija();
+            Rezervacija rezervacija = new Rezervacija()
+            {
+                stavkaRezervacijeList = new List<StavkaRezervacije>()
+            };
+
+            MessageBox.Show("Sistem je kreirao rezervaciju");
+            return rezervacija;
         }
 
         public void ObrisiStavku(StavkaRezervacije stavka)

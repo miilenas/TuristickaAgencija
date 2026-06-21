@@ -36,6 +36,7 @@
             label4 = new Label();
             label3 = new Label();
             groupBox2 = new GroupBox();
+            lblJedinicnaCenaStavke = new Label();
             lblUkupnaCenaStavke = new Label();
             label6 = new Label();
             btnDodaj = new Button();
@@ -54,7 +55,6 @@
             dgvStavkeRezervacije = new DataGridView();
             lblUkupanIznos = new Label();
             label2 = new Label();
-            lblJedinicnaCenaStavke = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numKolicina).BeginInit();
@@ -142,8 +142,8 @@
             groupBox2.Controls.Add(cmbSmestaj);
             groupBox2.Controls.Add(dateDolazak);
             groupBox2.Controls.Add(datePolazak);
-            groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(label10);
+            groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(txtOpis);
             groupBox2.Controls.Add(numKolicina);
             groupBox2.Controls.Add(label9);
@@ -157,6 +157,15 @@
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Stavka rezervacije";
+            // 
+            // lblJedinicnaCenaStavke
+            // 
+            lblJedinicnaCenaStavke.AutoSize = true;
+            lblJedinicnaCenaStavke.Location = new Point(193, 51);
+            lblJedinicnaCenaStavke.Name = "lblJedinicnaCenaStavke";
+            lblJedinicnaCenaStavke.Size = new Size(53, 28);
+            lblJedinicnaCenaStavke.TabIndex = 15;
+            lblJedinicnaCenaStavke.Text = "0.00";
             // 
             // lblUkupnaCenaStavke
             // 
@@ -191,7 +200,7 @@
             // cmbSmestaj
             // 
             cmbSmestaj.FormattingEnabled = true;
-            cmbSmestaj.Location = new Point(193, 318);
+            cmbSmestaj.Location = new Point(193, 134);
             cmbSmestaj.Name = "cmbSmestaj";
             cmbSmestaj.Size = new Size(285, 36);
             cmbSmestaj.TabIndex = 7;
@@ -199,7 +208,7 @@
             // dateDolazak
             // 
             dateDolazak.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateDolazak.Location = new Point(193, 273);
+            dateDolazak.Location = new Point(193, 321);
             dateDolazak.Name = "dateDolazak";
             dateDolazak.Size = new Size(285, 29);
             dateDolazak.TabIndex = 12;
@@ -207,7 +216,7 @@
             // datePolazak
             // 
             datePolazak.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            datePolazak.Location = new Point(193, 231);
+            datePolazak.Location = new Point(193, 279);
             datePolazak.Name = "datePolazak";
             datePolazak.Size = new Size(285, 29);
             datePolazak.TabIndex = 11;
@@ -216,7 +225,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(48, 324);
+            label11.Location = new Point(48, 145);
             label11.Name = "label11";
             label11.Size = new Size(81, 25);
             label11.TabIndex = 8;
@@ -226,7 +235,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(48, 273);
+            label10.Location = new Point(48, 321);
             label10.Name = "label10";
             label10.Size = new Size(139, 25);
             label10.TabIndex = 7;
@@ -234,14 +243,14 @@
             // 
             // txtOpis
             // 
-            txtOpis.Location = new Point(193, 181);
+            txtOpis.Location = new Point(193, 229);
             txtOpis.Name = "txtOpis";
             txtOpis.Size = new Size(285, 34);
             txtOpis.TabIndex = 6;
             // 
             // numKolicina
             // 
-            numKolicina.Location = new Point(193, 135);
+            numKolicina.Location = new Point(193, 183);
             numKolicina.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numKolicina.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numKolicina.Name = "numKolicina";
@@ -253,7 +262,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(48, 231);
+            label9.Location = new Point(48, 279);
             label9.Name = "label9";
             label9.Size = new Size(139, 25);
             label9.TabIndex = 4;
@@ -263,7 +272,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(48, 140);
+            label8.Location = new Point(48, 192);
             label8.Name = "label8";
             label8.Size = new Size(81, 25);
             label8.TabIndex = 3;
@@ -273,7 +282,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(48, 187);
+            label7.Location = new Point(48, 235);
             label7.Name = "label7";
             label7.Size = new Size(111, 25);
             label7.TabIndex = 2;
@@ -293,7 +302,7 @@
             // 
             btnSacuvajRezervaciju.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSacuvajRezervaciju.ForeColor = SystemColors.ActiveCaptionText;
-            btnSacuvajRezervaciju.Location = new Point(346, 635);
+            btnSacuvajRezervaciju.Location = new Point(418, 636);
             btnSacuvajRezervaciju.Name = "btnSacuvajRezervaciju";
             btnSacuvajRezervaciju.Size = new Size(285, 47);
             btnSacuvajRezervaciju.TabIndex = 13;
@@ -328,15 +337,6 @@
             label2.TabIndex = 16;
             label2.Text = "Ukupan iznos:";
             // 
-            // lblJedinicnaCenaStavke
-            // 
-            lblJedinicnaCenaStavke.AutoSize = true;
-            lblJedinicnaCenaStavke.Location = new Point(193, 51);
-            lblJedinicnaCenaStavke.Name = "lblJedinicnaCenaStavke";
-            lblJedinicnaCenaStavke.Size = new Size(53, 28);
-            lblJedinicnaCenaStavke.TabIndex = 15;
-            lblJedinicnaCenaStavke.Text = "0.00";
-            // 
             // KreirajRezervacijaUC
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -349,7 +349,7 @@
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Name = "KreirajRezervacijaUC";
-            Size = new Size(1075, 711);
+            Size = new Size(1062, 711);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

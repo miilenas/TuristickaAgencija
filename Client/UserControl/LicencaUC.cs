@@ -25,6 +25,14 @@ namespace Client.UserControl
         public DateTimePicker DtpDatumIzdavanja => dpIzdavanje;
         public DateTimePicker DtpDatumIsteka => dpIstek;
 
+        public void OcistiFormu()
+        {
+            cmbTipLicence.SelectedIndex = -1;
+            cmbAgent.SelectedIndex = -1;
+            dpIzdavanje.Value = DateTime.Today;
+            dpIstek.Value = DateTime.Today;
+        }
+
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
             controlor.UbaciLicenca();

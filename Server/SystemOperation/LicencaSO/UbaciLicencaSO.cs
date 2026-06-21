@@ -20,7 +20,7 @@ namespace Server.SystemOperation.LicencaSO
             protected override void ExecuteOperation()
             {
                 Result = (Licenca)broker.Add(licenca);
-                AgentLicenca il = licenca.agentLicenca;
+                AgentLicenca il = licenca.AgentLicenca;
                 il.Licenca = Result.IdLicenca;
                 broker.Add(il);
             }
