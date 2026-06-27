@@ -58,7 +58,7 @@ namespace Client.GUIControlor
                 Response response = Communication.Instance.Login(agent);
                 if (response.IsSuccess)
                 {
-                    MessageBox.Show("Email adresa i lozinka su ispravni.");
+                    MessageBox.Show("Uspesan login! Email adresa i lozinka su ispravni.");
                     try
                     {
                         frmLogin.Visible = false;
@@ -72,7 +72,7 @@ namespace Client.GUIControlor
                 }
                 else
                 {
-                    MessageBox.Show("Email adresa i lozinka nisu ispravni.");
+                    MessageBox.Show("Email adresa i/ili lozinka NISU ispravni.");
                 }
             }
             catch (Exception ex){ MessageBox.Show(ex.Message); }

@@ -26,11 +26,19 @@ namespace Client.GUIControlor
 
         private void UcitajSmestaje()
         {
-            List<Smestaj> smestaji = Communication.Instance.VratiListuSviSmestaj();
+            try
+            {
+                List<Smestaj> smestaji = Communication.Instance.VratiListuSviSmestaj();
 
-            uc.CmbSmestaj.DataSource = smestaji;
-            uc.CmbSmestaj.ValueMember = "IdSmestaj";
-            uc.CmbSmestaj.DisplayMember = "FullName";
+                uc.CmbSmestaj.DataSource = smestaji;
+                uc.CmbSmestaj.ValueMember = "IdSmestaj";
+                uc.CmbSmestaj.DisplayMember = "FullName";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Greska");
+            }
+
         }
 
         private void PopuniFormu()
@@ -91,19 +99,27 @@ namespace Client.GUIControlor
 
             Rezervacija.UkupanIznos = Rezervacija.stavkaRezervacijeList.Sum(s => s.UkupnaCena);
 
-            Response response = Communication.Instance.UpdateRezervacija(Rezervacija);
-
-            if (response.IsSuccess)
+            try
             {
-                MessageBox.Show("Sistem je izmenio stavku rezervacije.");
+                Response response = Communication.Instance.UpdateRezervacija(Rezervacija);
 
-                FrmMain main = (FrmMain)uc.FindForm();
-                main.ChangePanel(new RezervacijaUC(Rezervacija));
+                if (response.IsSuccess)
+                {
+                    MessageBox.Show("Sistem je izmenio stavku rezervacije.");
+
+                    FrmMain main = (FrmMain)uc.FindForm();
+                    main.ChangePanel(new RezervacijaUC(Rezervacija));
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da izmeni stavku rezervacije.");
+                }
             }
-            else
+            catch( Exception ex)
             {
-                MessageBox.Show("Sistem ne moze da izmeni stavku rezervacije.");
+                MessageBox.Show(ex.Message, "Greska");
             }
+           
         }
     }
 }

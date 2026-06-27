@@ -33,59 +33,66 @@ namespace Client.GUIControlor
                 return false;
             }
 
-            putnik.Ime = kreirajPutnikUC.Ime.Trim();
+            try
+            {
+                putnik.Ime = kreirajPutnikUC.Ime.Trim();
             putnik.Prezime = kreirajPutnikUC.Prezime.Trim();
             putnik.BrojTelefona = kreirajPutnikUC.BrojTelefona.Trim();
             putnik.BrojPasosa = kreirajPutnikUC.BrojPasosa.Trim();
             putnik.IdMesto = (Mesto)kreirajPutnikUC.CmbMesto.SelectedItem;
 
-            if (!PasosJeJedinstven(putnik.BrojPasosa))
+          
+                Response response = Communication.Instance.CreatePutnik(putnik);
+
+                if (response.IsSuccess)
+                {
+                    putnik = (Putnik)response.Result;
+                    MessageBox.Show("Sistem je zapamtio putnika.");
+                    return true;
+                }
+                else
+                {
+                    if (!String.IsNullOrWhiteSpace(response.ExceptionMessage))
+                    {
+                        MessageBox.Show(response.ExceptionMessage, "Greska");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sistem ne moze da zapamti putnika", "Greska");
+                    }
+
+                    return false;
+                }
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Broj pasosa mora biti jedinstven.", "Greska");
+                MessageBox.Show(ex.Message, "Greska");
                 return false;
             }
 
-            Response response = Communication.Instance.CreatePutnik(putnik);
-
-            if (response.IsSuccess)
-            {
-                putnik = (Putnik)response.Result;
-                MessageBox.Show("Sistem je zapamtio putnika.");
-                return true;
-            }
-            else
-            {
-                MessageBox.Show("Sistem ne moze da zapamti putnika", "Greska");
-                return false;
-            }
         }
 
         private void VratiMesto()
         {
-            List<Mesto> mesta = (List<Mesto>)Communication.Instance.VratiListuSviMesto();
-
-            if (mesta == null || mesta.Count == 0)
+            try
             {
-                MessageBox.Show("Greska!Nema unetih mesta!", "Greska");
-                return;
+                List<Mesto> mesta = (List<Mesto>)Communication.Instance.VratiListuSviMesto();
+
+                if (mesta == null || mesta.Count == 0)
+                {
+                    MessageBox.Show("Greska!Nema unetih mesta!", "Greska");
+                    return;
+                }
+
+                kreirajPutnikUC.CmbMesto.DataSource = mesta;
+                kreirajPutnikUC.CmbMesto.ValueMember = "IdMesto";
+                kreirajPutnikUC.CmbMesto.DisplayMember = "FullName";
+                kreirajPutnikUC.CmbMesto.SelectedIndex = -1;
             }
-
-            kreirajPutnikUC.CmbMesto.DataSource = mesta;
-            kreirajPutnikUC.CmbMesto.ValueMember = "IdMesto";
-            kreirajPutnikUC.CmbMesto.DisplayMember = "FullName";
-            kreirajPutnikUC.CmbMesto.SelectedIndex = -1;
-        }
-
-        private bool PasosJeJedinstven(string brojPasosa)
-        {
-            List<Putnik> putnici = (List<Putnik>)Communication.Instance.VratiListuSviPutnik();
-
-            if (putnici == null)
+            catch (Exception ex)
             {
-                return false;
+                MessageBox.Show(ex.Message, "Greska");
             }
-
-            return !putnici.Any(p => p.BrojPasosa.Trim().Equals(brojPasosa.Trim(), StringComparison.OrdinalIgnoreCase));
         }
     }
 

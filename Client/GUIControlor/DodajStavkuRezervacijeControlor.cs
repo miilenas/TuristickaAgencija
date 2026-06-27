@@ -87,21 +87,30 @@ namespace Client.GUIControlor
             Rezervacija.stavkaRezervacijeList.Add(stavka);
             Rezervacija.UkupanIznos = Rezervacija.stavkaRezervacijeList.Sum(s => s.UkupnaCena);
 
-            //update jer dodajes stavku na vec postojecu rezervaciju
-            Response response = Communication.Instance.UpdateRezervacija(Rezervacija);
-
-            if (response.IsSuccess)
+            try
             {
-                //MessageBox.Show("Sistem je dodao stavku rezervacije.");
+                //update jer dodajes stavku na vec postojecu rezervaciju
+                Response response = Communication.Instance.UpdateRezervacija(Rezervacija);
 
-                FrmMain main = (FrmMain)uc.FindForm();
-                main.ChangePanel(new RezervacijaUC(Rezervacija));
+                if (response.IsSuccess)
+                {
+                    //MessageBox.Show("Sistem je dodao stavku rezervacije.");
+
+                    FrmMain main = (FrmMain)uc.FindForm();
+                    main.ChangePanel(new RezervacijaUC(Rezervacija));
+                }
+                else
+                {
+                    Rezervacija.stavkaRezervacijeList.Remove(stavka);
+                    MessageBox.Show("Sistem ne moze da doda stavku rezervacije.");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                Rezervacija.stavkaRezervacijeList.Remove(stavka);
-                MessageBox.Show("Sistem ne moze da doda stavku rezervacije.");
+                MessageBox.Show(ex.Message, "Greska");
             }
+            
+           
         }
     }
 }

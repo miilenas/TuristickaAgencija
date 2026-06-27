@@ -37,8 +37,17 @@ namespace Client.GUIControlor
 
         public List<Putnik> VratiListuSviPutnik()
         {
-            List<Putnik> putnici = Communication.Instance.VratiListuSviPutnik();
-            return putnici;
+            try
+            {
+                List<Putnik> putnici = Communication.Instance.VratiListuSviPutnik();
+                return putnici;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Greska");
+                return null;
+            }
+           
         }
 
         public void UcitajPretraziPutnikCMB(List<Putnik> putnici)
@@ -69,8 +78,17 @@ namespace Client.GUIControlor
 
         public List<Agent> VratiListuSviAgent()
         {
-            List<Agent> agenti = Communication.Instance.VratiListuSviAgent();
-            return agenti;
+            try
+            {
+                List<Agent> agenti = Communication.Instance.VratiListuSviAgent();
+                return agenti;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Greska");
+                return null;
+            }
+          
         }
 
         public void UcitajPretraziAgentCMB(List<Agent> agenti)
@@ -103,8 +121,18 @@ namespace Client.GUIControlor
 
         public List<Smestaj> VratiListuSviSmestaj()
         {
-            List<Smestaj> smestaji = Communication.Instance.VratiListuSviSmestaj();
-            return smestaji;
+            try
+            {
+                List<Smestaj> smestaji = Communication.Instance.VratiListuSviSmestaj();
+                return smestaji;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Greska");
+                return null;
+            }
+
+           
         }
 
         private void UcitajCmbSmestaj()
@@ -191,16 +219,24 @@ namespace Client.GUIControlor
             rezervacijaDTO.Agent = (Agent)rezervacijaUC.CmbAgentIzmeni.SelectedItem;
             rezervacijaDTO.UkupanIznos = IzracunajUkupanIznos(rezervacijaDTO.stavkaRezervacijeList);
 
-            Response response = Communication.Instance.UpdateRezervacija(rezervacijaDTO);
+            try
+            {
+                Response response = Communication.Instance.UpdateRezervacija(rezervacijaDTO);
 
-            if (response.IsSuccess)
-            {
-                MessageBox.Show("Sistem je zapamtio rezervaciju.");
+                if (response.IsSuccess)
+                {
+                    MessageBox.Show("Sistem je zapamtio rezervaciju.");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da zapamti rezervaciju.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Sistem ne moze da zapamti rezervaciju.");
+                MessageBox.Show(ex.Message, "Greska");
             }
+           
         }
 
         public void OdabranaRezervacija()
@@ -332,17 +368,26 @@ namespace Client.GUIControlor
 
             rezervacijaDTO.UkupanIznos = IzracunajUkupanIznos(rezervacijaDTO.stavkaRezervacijeList);
 
-            Response response = Communication.Instance.UpdateRezervacija(rezervacijaDTO);
+            try
+            {
+                Response response = Communication.Instance.UpdateRezervacija(rezervacijaDTO);
 
-            if (response.IsSuccess)
-            {
-                MessageBox.Show("Sistem je obrisao stavku rezervacije.");
-                DGVStavka(rezervacijaDTO.stavkaRezervacijeList);
+                if (response.IsSuccess)
+                {
+                    MessageBox.Show("Sistem je obrisao stavku rezervacije.");
+                    DGVStavka(rezervacijaDTO.stavkaRezervacijeList);
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da obrise stavku rezervacije.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Sistem ne moze da obrise stavku rezervacije.");
+                MessageBox.Show(ex.Message, "Greska");
             }
+
+          
         }
 
         private void DGV(List<Rezervacija> rezervacije)
@@ -399,8 +444,11 @@ namespace Client.GUIControlor
 
         private List<Rezervacija> VratiListuSviRezervacija()
         {
-            List<Rezervacija> rezervacije = Communication.Instance.VratiListuSviRezervacija();
-            return rezervacije;
+            
+                List<Rezervacija> rezervacije = Communication.Instance.VratiListuSviRezervacija();
+                return rezervacije;
+            
+            
         }
 
         private void SakrijKolonuRezervacije(string nazivKolone)

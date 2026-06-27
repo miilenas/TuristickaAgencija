@@ -103,20 +103,29 @@ namespace Client.GUIControlor
             rezervacija.Putnik = (Putnik)rezervacijaUC.CmbPutnik.SelectedItem;
             rezervacija.UkupanIznos = IzracunajUkupanIznos();
             rezervacija.stavkaRezervacijeList = uneteStavkeRezervacije;
-
-            Response response = Communication.Instance.CreateRezervacija(rezervacija);
-
-            if (response.IsSuccess)
+            try
             {
-                rezervacija = (Rezervacija)response.Result;
-                MessageBox.Show("Sistem je zapamtio rezervaciju.");
-                return true;
+                Response response = Communication.Instance.CreateRezervacija(rezervacija);
+
+                if (response.IsSuccess)
+                {
+                    rezervacija = (Rezervacija)response.Result;
+                    MessageBox.Show("Sistem je zapamtio rezervaciju.");
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da zapamti rezervaciju.");
+                    return false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Sistem ne moze da zapamti rezervaciju.");
+                MessageBox.Show(ex.Message, "Greska");
                 return false;
             }
+
+           
         }
 
         private decimal IzracunajUkupanIznos()
@@ -206,17 +215,26 @@ namespace Client.GUIControlor
 
         public Putnik kreirajPutnik()
         {
-            Response response = Communication.Instance.CreatePutnik(new Putnik());
+            try
+            {
+                Response response = Communication.Instance.CreatePutnik(new Putnik());
 
-            if (response.IsSuccess)
-            {
-                MessageBox.Show("Sistem je kreirao putnika");
+                if (response.IsSuccess)
+                {
+                    MessageBox.Show("Sistem je kreirao putnika");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da kreira putnika");
+                }
+                return (Putnik)response.Result;
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Sistem ne moze da kreira putnika");
+                MessageBox.Show(ex.Message, "Greska");
+                return null;
             }
-            return (Putnik)response.Result;
+            
         }
 
     }

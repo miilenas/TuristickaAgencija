@@ -60,18 +60,26 @@ namespace Client.GUIControlor
 
 
             licenca.AgentLicenca = agentLicenca;
-
-            Response response = Communication.Instance.UbaciLicenca(licenca);
-
-            if (response.IsSuccess)
+            try
             {
-                MessageBox.Show("Sistem je zapamtio licencu.");
-                licencaUC.OcistiFormu();
+
+                Response response = Communication.Instance.UbaciLicenca(licenca);
+
+                if (response.IsSuccess)
+                {
+                    MessageBox.Show("Sistem je zapamtio licencu.");
+                    licencaUC.OcistiFormu();
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da sacuva licencu.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Sistem ne moze da sacuva licencu.");
+                MessageBox.Show(ex.Message, "Greska");
             }
+
         }
 
         private void VratiListuSviAgent()

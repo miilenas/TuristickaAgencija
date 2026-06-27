@@ -29,6 +29,7 @@ namespace Client
 
         public void Connect()
         {
+            Close();
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             socket.Connect("127.0.0.1", 9999);
             serializer = new JsonNetworkSerializer(socket);
@@ -46,190 +47,143 @@ namespace Client
             return serializer.ReadType<T>(response.Result);
         }
 
+        private void EnsureConnected()
+        {
+            if (socket != null && serializer != null)
+            {
+                return;
+            }
+
+            try
+            {
+                Connect();
+            }
+            catch
+            {
+                Close();
+                throw new Exception("Neuspesno povezivanje sa serverom");
+            }
+        }
+
+        private Response SendRequest<T>(Operation operation, object argument = null) where T : class
+        {
+            EnsureConnected();
+
+            try
+            {
+                Request request = new Request()
+                {
+                    Operation = operation,
+                    Argument = argument
+                };
+
+                serializer.Send(request);
+                Response response = serializer.Receive<Response>();
+                response.Result = ReadResponseResult<T>(response);
+                return response;
+            }
+            catch
+            {
+                Close();
+                throw new Exception("Veza sa serverom je prekinuta. Pokrenite server i pokusajte ponovo.");
+            }
+        }
+
+        public void Close()
+        {
+            try
+            {
+                socket?.Shutdown(SocketShutdown.Both);
+            }
+            catch
+            {
+            }
+
+            try
+            {
+                socket?.Close();
+            }
+            catch
+            {
+            }
+
+            socket = null;
+            serializer = null;
+        }
+
         internal Response Login(Agent agent)
         {
-            Request request = new Request()
-            {
-                Operation = Operation.Login,
-                Argument = agent
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            response.Result = ReadResponseResult<Agent>(response);
-            return response;
+            return SendRequest<Agent>(Operation.Login, agent);
         }
 
         internal Response CreateRezervacija(Rezervacija rezervacija)
         {
-            Request request = new Request()
-            {
-                Operation = Operation.CreateRezervacija,
-                Argument = rezervacija
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            response.Result = ReadResponseResult<Rezervacija>(response);
-            return response;
+            return SendRequest<Rezervacija>(Operation.CreateRezervacija, rezervacija);
         }
 
         internal Response SearchRezervacija(KriterijumiRezervacija kriterijum)
         {
-            Request request = new Request()
-            {
-                Operation = Operation.SearchRezervacija,
-                Argument = kriterijum
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            response.Result = ReadResponseResult<List<Rezervacija>>(response);
-            return response;
+            return SendRequest<List<Rezervacija>>(Operation.SearchRezervacija, kriterijum);
         }
 
         internal Response UpdateRezervacija(Rezervacija rezervacija)
         {
-            Request request = new Request()
-            {
-                Operation = Operation.UpdateRezervacija,
-                Argument = rezervacija
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            response.Result = ReadResponseResult<Rezervacija>(response);
-            return response;
+            return SendRequest<Rezervacija>(Operation.UpdateRezervacija, rezervacija);
         }
 
         internal Response UpdatePutnik(Putnik putnik)
         {
-            Request request = new Request()
-            {
-                Operation = Operation.UpdatePutnik,
-                Argument = putnik
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            response.Result = ReadResponseResult<Putnik>(response);
-            return response;
+            return SendRequest<Putnik>(Operation.UpdatePutnik, putnik);
         }
 
         internal Response CreatePutnik(Putnik putnik)
         {
-            Request request = new Request()
-            {
-                Operation = Operation.CreatePutnik,
-                Argument = putnik
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            response.Result = ReadResponseResult<Putnik>(response);
-            return response;
+            return SendRequest<Putnik>(Operation.CreatePutnik, putnik);
         }
 
         internal Response DeletePutnik(Putnik putnik)
         {
-            Request request = new Request()
-            {
-                Operation = Operation.DeletePutnik,
-                Argument = putnik
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            response.Result = ReadResponseResult<Putnik>(response);
-            return response;
+            return SendRequest<Putnik>(Operation.DeletePutnik, putnik);
         }
 
         internal Response SearchPutnik(KriterijumPutnik kriterijum)
         {
-            Request request = new Request()
-            {
-                Operation = Operation.SearchPutnik,
-                Argument = kriterijum
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            response.Result = ReadResponseResult<List<Putnik>>(response);
-            return response;
+            return SendRequest<List<Putnik>>(Operation.SearchPutnik, kriterijum);
         }
 
         internal Response UbaciLicenca(Licenca licenca)
         {
-            Request request = new Request()
-            {
-                Operation = Operation.UbaciLicenca,
-                Argument = licenca
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            response.Result = ReadResponseResult<Licenca>(response);
-            return response;
+            return SendRequest<Licenca>(Operation.UbaciLicenca, licenca);
         }
 
         internal List<Putnik> VratiListuSviPutnik()
         {
-            Request request = new Request()
-            {
-                Operation = Operation.VratiListuSviPutnik
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            return serializer.ReadType<List<Putnik>>(response.Result);
+            Response response = SendRequest<List<Putnik>>(Operation.VratiListuSviPutnik);
+            return (List<Putnik>)response.Result;
         }
 
         internal List<Agent> VratiListuSviAgent()
         {
-            Request request = new Request()
-            {
-                Operation = Operation.VratiListuSviAgent
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            return serializer.ReadType<List<Agent>>(response.Result);
+            Response response = SendRequest<List<Agent>>(Operation.VratiListuSviAgent);
+            return (List<Agent>)response.Result;
         }
 
         internal List<Smestaj> VratiListuSviSmestaj()
         {
-            Request request = new Request()
-            {
-                Operation = Operation.VratiListuSviSmestaj
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            return serializer.ReadType<List<Smestaj>>(response.Result);
+            Response response = SendRequest<List<Smestaj>>(Operation.VratiListuSviSmestaj);
+            return (List<Smestaj>)response.Result;
         }
 
         internal List<Mesto> VratiListuSviMesto()
         {
-            Request request = new Request()
-            {
-                Operation = Operation.VratiListuSviMesto
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            return serializer.ReadType<List<Mesto>>(response.Result);
+            Response response = SendRequest<List<Mesto>>(Operation.VratiListuSviMesto);
+            return (List<Mesto>)response.Result;
         }
 
         internal List<Rezervacija> VratiListuSviRezervacija()
         {
-            Request request = new Request()
-            {
-                Operation = Operation.VratiListuSviRezervacija
-            };
-
-            serializer.Send(request);
-            Response response = serializer.Receive<Response>();
-            return serializer.ReadType<List<Rezervacija>>(response.Result);
+            Response response = SendRequest<List<Rezervacija>>(Operation.VratiListuSviRezervacija);
+            return (List<Rezervacija>)response.Result;
         }
     }
 }

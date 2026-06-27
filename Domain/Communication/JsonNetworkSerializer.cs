@@ -29,13 +29,40 @@ namespace Common.Communication
 
         public void Send(object z)
         {
-            writer.WriteLine(JsonSerializer.Serialize(z));
+            try
+            {
+                writer.WriteLine(JsonSerializer.Serialize(z));
+            }
+            catch (IOException)
+            {
+                throw new Exception("IOE Neuspesno povezivanje sa serverom");
+            }
+            catch (SocketException)
+            {
+                throw new Exception("Neuspesno povezivanje sa serverom");
+            }
         }
 
         public T Receive<T>()
         {
-            string json = reader.ReadLine();
-            return JsonSerializer.Deserialize<T>(json);
+            try
+            {
+                string json = reader.ReadLine();
+
+                if (json == null)
+                    throw new Exception("Neuspesno povezivanje sa serverom");
+
+                return JsonSerializer.Deserialize<T>(json);
+            }
+            catch (IOException)
+            {
+                throw new Exception("Neuspesno povezivanje sa serverom");
+            }
+            catch (SocketException)
+            {
+                throw new Exception("Neuspesno povezivanje sa serverom");
+            }
+
         }
 
         public T ReadType<T>(object podaci) where T : class

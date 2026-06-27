@@ -18,8 +18,14 @@ namespace Client.GUIControlor
         public PutnikControlor(PutnikUC putnikUC)
         {
             this.putnikUC = putnikUC;
-            this.UcitajPretraziMestoCMB(this.VratiListuSviMesto());
-            this.UcitajIzmeniMestoCMB(this.VratiListuSviMesto());
+            svaMesta = this.VratiListuSviMesto();
+            if (svaMesta == null)
+            {
+                return;
+            }
+
+            this.UcitajPretraziMestoCMB(svaMesta);
+            this.UcitajIzmeniMestoCMB(svaMesta);
             this.DGV(this.VratiListuSviPutnik());
         }
 
@@ -37,31 +43,33 @@ namespace Client.GUIControlor
                     IdMesto = (Mesto)putnikUC.CmbMesto.SelectedItem
                 };
 
-                if (!PasosJeJedinstven(putnik.BrojPasosa, putnik.IdPutnik))
+                try
                 {
-                    MessageBox.Show("Broj pasosa mora biti jedinstven.", "Greska");
-                    return;
-                }
+                    Response response = Communication.Instance.UpdatePutnik(putnik);
 
-                Response response = Communication.Instance.UpdatePutnik(putnik);
-
-                if (response.IsSuccess)
-                {
-                    MessageBox.Show("Sistem je izmenio putnika.");
-                    putnikUC.DgvSviPutnici.DataSource = null;
-                    DGV(VratiListuSviPutnik());
-                }
-                else
-                {
-                    if (!String.IsNullOrWhiteSpace(response.ExceptionMessage))
+                    if (response.IsSuccess)
                     {
-                        MessageBox.Show(response.ExceptionMessage, "Greska");
+                        MessageBox.Show("Sistem je izmenio putnika.");
+                        putnikUC.DgvSviPutnici.DataSource = null;
+                        OsveziPodatke();
                     }
                     else
                     {
-                        MessageBox.Show("Sistem ne moze da sacuva putnika.");
+                        if (!String.IsNullOrWhiteSpace(response.ExceptionMessage))
+                        {
+                            MessageBox.Show(response.ExceptionMessage, "Greska");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sistem ne moze da sacuva putnika.");
+                        }
                     }
                 }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Greska");
+                }
+               
             }
         }
 
@@ -79,7 +87,7 @@ namespace Client.GUIControlor
                     {
                         MessageBox.Show("Sistem je obrisao putnika.");
                         putnikUC.DgvSviPutnici.DataSource = null;
-                        DGV(VratiListuSviPutnik());
+                        OsveziPodatke();
                     }
                     else
                     {
@@ -135,31 +143,50 @@ namespace Client.GUIControlor
                 kriterijum.Mesto = (Mesto)putnikUC.CmbMestoPretrazi.SelectedItem;
             }
 
-            Response response = Communication.Instance.SearchPutnik(kriterijum);
-
-            if (response.IsSuccess)
+            try
             {
-                List<Putnik> rezultat = (List<Putnik>)response.Result;
+                Response response = Communication.Instance.SearchPutnik(kriterijum);
 
-                if (rezultat == null || rezultat.Count == 0)
+                if (response.IsSuccess)
                 {
+                    List<Putnik> rezultat = (List<Putnik>)response.Result;
+
+                    if (rezultat == null || rezultat.Count == 0)
+                    {
+                        putnikUC.DgvSviPutnici.DataSource = null;
+                        MessageBox.Show("Sistem ne moze da nadje putnike po zadatim kriterijumima.");
+                        return;
+                    }
+
                     putnikUC.DgvSviPutnici.DataSource = null;
-                    MessageBox.Show("Sistem ne moze da nadje putnike po zadatim kriterijumima.");
-                    return;
+                    DGV(rezultat);
+
+                    MessageBox.Show("Sistem je nasao putnike po zadatim kriterijumima.");
                 }
-
-                putnikUC.DgvSviPutnici.DataSource = null;
-                DGV(rezultat);
-
-               MessageBox.Show("Sistem je nasao putnike po zadatim kriterijumima.");
-            }
-            else
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da nadje putnike po zadatim kriterijumima.");
+                }
+            } catch(Exception ex)
             {
-                MessageBox.Show("Sistem ne moze da nadje putnike po zadatim kriterijumima.");
+                MessageBox.Show(ex.Message, "Greska");
             }
+           
         }
         internal void OsveziPutnike()
         {
+            if (svaMesta == null)
+            {
+                svaMesta = VratiListuSviMesto();
+            }
+
+            putnikUC.DgvSviPutnici.DataSource = null;
+            DGV(VratiListuSviPutnik());
+        }
+
+        private void OsveziPodatke()
+        {
+            svaMesta = VratiListuSviMesto();
             putnikUC.DgvSviPutnici.DataSource = null;
             DGV(VratiListuSviPutnik());
         }
@@ -181,7 +208,12 @@ namespace Client.GUIControlor
 
         public void UcitajPretraziMestoCMB(List<Mesto> mesta)
         {
-            if (mesta == null || mesta.Count == 0)
+            if (mesta == null)
+            {
+                return;
+            }
+
+            if (mesta.Count == 0)
             {
                 MessageBox.Show("Greska! Nema unetih mesta!", "Greska");
                 return;
@@ -195,7 +227,12 @@ namespace Client.GUIControlor
 
         public void UcitajIzmeniMestoCMB(List<Mesto> mesta)
         {
-            if (mesta == null || mesta.Count == 0)
+            if (mesta == null)
+            {
+                return;
+            }
+
+            if (mesta.Count == 0)
             {
                 MessageBox.Show("Greska! Nema unetih mesta!", "Greska");
                 return;
@@ -209,16 +246,14 @@ namespace Client.GUIControlor
 
         private void DGV(List<Putnik> putnici)
         {
-            List<Mesto> mesta = this.VratiListuSviMesto();
-
-            if (putnici == null)
+            if (putnici == null || svaMesta == null)
             {
                 return;
             }
 
             foreach (Putnik p in putnici)
             {
-                foreach (Mesto m in mesta)
+                foreach (Mesto m in svaMesta)
                 {
                     if (p.IdMesto.IdMesto.Equals(m.IdMesto))
                     {
@@ -260,28 +295,32 @@ namespace Client.GUIControlor
 
         private List<Putnik> VratiListuSviPutnik()
         {
-            List<Putnik> putnici = (List<Putnik>)Communication.Instance.VratiListuSviPutnik();
-            return putnici;
+            try
+            {
+                List<Putnik> putnici = (List<Putnik>)Communication.Instance.VratiListuSviPutnik();
+                return putnici;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Greska");
+                return null;
+            }
+         
         }
 
         private List<Mesto> VratiListuSviMesto()
         {
-            List<Mesto> mesta = Communication.Instance.VratiListuSviMesto();
-            return mesta;
-        }
-
-        private bool PasosJeJedinstven(string brojPasosa, int idPutnik)
-        {
-            List<Putnik> putnici = VratiListuSviPutnik();
-
-            if (putnici == null)
+            try
             {
-                return false;
+                List<Mesto> mesta = Communication.Instance.VratiListuSviMesto();
+                return mesta;
             }
-
-            return !putnici.Any(p =>
-                p.IdPutnik != idPutnik &&
-                p.BrojPasosa.Trim().Equals(brojPasosa.Trim(), StringComparison.OrdinalIgnoreCase));
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Greska");
+                return null;
+            }
+           
         }
 
         public Putnik OdabraniPutnik()
